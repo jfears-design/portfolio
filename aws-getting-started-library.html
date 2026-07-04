@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #ffffff; }
+  image-slot { display: block; }
+  image-slot::part(ring) { display: none; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="color:#1a1a1a;">
+
+  <!-- top nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:#0d0d0d;color:#fff;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,48px);">
+    <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:0.01em;opacity:0.92;padding:8px 14px;margin-left:-14px;border-radius:999px;transition:background .2s ease,opacity .2s ease,gap .2s ease;" style-hover="opacity:1;gap:14px;background:#414141;">
+      <span style="display:inline-flex;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 15.8333L4.16666 10L10 4.16667" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.8333 10H4.16666" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-weight:500;">Back to Work</span>
+    </a>
+    <a href="index.html#work" style="color:#fff;text-decoration:none;font-size:18px;opacity:0.7;line-height:1;display:inline-flex;align-items:center;justify-content:center;padding:8px;margin-right:-8px;border-radius:50%;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;"><path d="M15 5L5 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 5L15 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+  </nav>
+
+  <!-- reading progress -->
+  <div style="position:sticky;top:56px;z-index:49;height:3px;background:transparent;">
+    <div ref="{{ progressRef }}" style="height:100%;width:0%;background:#FF9900;transition:width .08s linear;"></div>
+  </div>
+
+  <!-- hero -->
+  <header style="position:relative;color:#fff;">
+    <div style="position:absolute;top:0;left:0;right:0;height:calc(100% - 230px);background:#232F3E;z-index:0;"></div>
+    <div style="position:relative;z-index:1;width:min(1120px,88vw);margin:0 auto;padding:clamp(40px,6vw,64px) 0 0;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
+      <div>
+        <h1 style="font-size:clamp(40px,7vw,76px);font-weight:700;letter-spacing:-0.03em;margin:0;line-height:0.98;">Getting Started Library</h1>
+        <p style="font-size:clamp(15px,1.5vw,20px);margin:14px 0 0;opacity:0.85;font-weight:400;letter-spacing:0.01em;">Research, Strategy &amp; Feature Redesign</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;padding-bottom:6px;">
+        <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Product Design</span>
+        <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">UX Research</span>
+        <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Usability Testing</span>
+        <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Enterprise</span>
+        <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Design Systems</span>
+      </div>
+    </div>
+    <div style="position:relative;z-index:1;width:min(1400px,95vw);margin-left:auto;margin-right:auto;margin-top:40px;">
+      <image-slot id="aws-hero" fit="cover" src="assets/aws-hero.jpg" style="width:100%;height:clamp(280px,44vw,580px);border-radius:20px;box-shadow:0 12px 32px rgba(0,0,0,0.16);" shape="rounded" radius="20" placeholder="Drop hero image — admin at laptop / GSL console"></image-slot>
+    </div>
+  </header>
+
+  <!-- overview + my role -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,72px);align-items:start;">
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Project Summary</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 36px;">AWS Service Catalog's Getting Started Library (GSL) gave new admins a shortcut to launching their first cloud infrastructure products &mdash; but almost no one was using it. It was hidden, confusing, and generating more friction than momentum. I drove the full redesign: from identifying the problem to shipping the solution.</p>
+        <h3 style="font-size:clamp(20px,2.2vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0 0 16px;">My Role</h3>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I identified this opportunity independently and drove alignment across the team. Working with our Technical Project Manager and UX Researcher, I owned the project end-to-end: strategy, research, design, and usability testing.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr;gap:28px;align-content:start;">
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">The Client</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Amazon Web Services &mdash; 2021</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">My Role</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Senior UX Designer &mdash; end-to-end</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">The Team</div>
+          <div style="font-size:15px;color:#444;line-height:1.65;">1 Technical Project Manager, 1 UX Researcher</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the customer -->
+  <section style="background:#f5f5f5;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <image-slot id="aws-customer" data-reveal fit="contain" src="assets/aws-customer.jpg" style="width:100%;height:auto;aspect-ratio:1920/1080;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:8px;" shape="rounded" radius="8" placeholder="The Customer — personas & lifecycle"></image-slot>
+    </div>
+  </section>
+
+  <!-- the challenge -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="max-width:760px;margin-bottom:clamp(28px,4vw,40px);">
+      <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">The Challenge</h2>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">The GSL was buried inside an unrelated navigation tab with no direct path from the main Service Catalog console. When new admins did find it, the hierarchical folder structure made products hard to discover, the product views didn't give enough information to act on, and adding a product to a portfolio required 7 clicks. There was also no clear product strategy for how to increase GSL adoption &mdash; I had to build that too.</p>
+    </div>
+    <div data-reveal>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:12px;">Before &mdash; the buried navigation path</div>
+      <image-slot id="aws-before-flow" fit="contain" src="assets/aws-challenge.jpg" style="width:100%;height:auto;aspect-ratio:1920/920;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="'Before' user flow diagram"></image-slot>
+    </div>
+  </section>
+
+  <!-- discovery -->
+  <section style="background:#f5f5f5;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <div data-reveal style="max-width:760px;margin-bottom:clamp(28px,4vw,40px);">
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Discovery</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I initiated a PRFAQ to build internal alignment on the opportunity, then led a comprehensive research phase to understand why adoption was lagging.</p>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:clamp(32px,4vw,48px);">
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="width:46px;height:46px;border-radius:50%;background:#FF9900;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">01</div>
+          <div style="font-size:15.5px;font-weight:600;color:#1a1a1a;line-height:1.5;">Partner-service interviews to understand the full scope of the problem from adjacent teams</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="width:46px;height:46px;border-radius:50%;background:#FF9900;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">02</div>
+          <div style="font-size:15.5px;font-weight:600;color:#1a1a1a;line-height:1.5;">Customer sentiment research to identify the specific breakpoints in the onboarding journey</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="width:46px;height:46px;border-radius:50%;background:#FF9900;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">03</div>
+          <div style="font-size:15.5px;font-weight:600;color:#1a1a1a;line-height:1.5;">Data analysis to quantify the gap between GSL availability and GSL adoption</div>
+        </div>
+      </div>
+      <div data-reveal style="background:#232F3E;border-radius:16px;padding:clamp(32px,4vw,48px);margin-bottom:clamp(32px,4vw,48px);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:14px;">Key insight</div>
+        <p style="font-size:clamp(18px,2vw,24px);line-height:1.5;color:#fff;margin:0;font-weight:500;letter-spacing:-0.01em;">Users weren't failing to use the GSL because it was bad &mdash; they couldn't find it, and when they did, the product information wasn't sufficient to act on. The information architecture was the primary obstacle.</p>
+      </div>
+      <image-slot id="aws-discovery" data-reveal fit="contain" src="assets/aws-discovery.jpg" style="width:100%;height:auto;aspect-ratio:1920/920;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:8px;" shape="rounded" radius="8" placeholder="Pain points & insights"></image-slot>
+    </div>
+  </section>
+
+  <!-- design & prototype -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Design &amp; Prototype</h2>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);margin-bottom:clamp(32px,4vw,48px);">
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I redesigned the information architecture to eliminate the folder structure, surfacing all GSL products on a single discoverable page. I improved product detail views to give admins the context they needed to make decisions, and redesigned the add-to-portfolio workflow from 7 clicks to 2.</p>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I built an interactive prototype and co-authored a comprehensive usability study with the UX Researcher to validate the direction before any code was written.</p>
+    </div>
+    <div data-reveal style="margin-bottom:clamp(36px,5vw,56px);">
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:16px;">Interface design</div>
+      <image-slot id="aws-interface-design" fit="contain" src="assets/aws-interface-design.png" style="width:100%;height:auto;aspect-ratio:3530/1710;background:#fff;border-radius:8px;" shape="rounded" radius="8" placeholder="Annotated interface design"></image-slot>
+    </div>
+    <div data-reveal>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:16px;">Interactive prototype</div>
+      <image-slot id="aws-prototype" fit="contain" src="assets/aws-prototype.jpg" style="width:100%;height:auto;aspect-ratio:1920/1040;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:8px;" shape="rounded" radius="8" placeholder="Prototype flow"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- usability test findings -->
+  <section style="background:#f5f5f5;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <div data-reveal style="max-width:760px;margin-bottom:clamp(28px,4vw,40px);">
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Usability Test Findings</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">Five key themes emerged from moderated testing &mdash; each one shaping the final design direction.</p>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;">
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FF9900;margin-bottom:10px;">Theme 1</div>
+          <p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Users gravitate toward filtering rather than browsing as an initial exploration strategy.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FF9900;margin-bottom:10px;">Theme 2</div>
+          <p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Clear separation between "My products" and "GSL products" was essential to reducing confusion.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FF9900;margin-bottom:10px;">Theme 3</div>
+          <p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Architectural diagrams were highly valued as decision-making aids on product detail pages.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FF9900;margin-bottom:10px;">Theme 4</div>
+          <p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Users wanted additional governance context before adding products to their portfolios.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:28px 24px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FF9900;margin-bottom:10px;">Theme 5</div>
+          <p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Tracking (Darkroom metrics) was introduced to understand customer behavior in the new interface post-launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- final design -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 36px;">Final Design</h2>
+    <image-slot id="aws-final-hero" data-reveal fit="contain" src="assets/aws-mocks-hero.png" style="width:100%;height:auto;aspect-ratio:2665/1515;margin-bottom:20px;" shape="rect" radius="0" placeholder="Final design — laptop mockup of redesigned GSL"></image-slot>
+    <image-slot id="aws-mocks" data-reveal fit="contain" src="assets/aws-mocks.jpg" style="width:100%;height:auto;aspect-ratio:1920/786;" shape="rect" radius="0" placeholder="Final screens"></image-slot>
+  </section>
+
+  <!-- impact -->
+  <section style="background:#232F3E;color:#fff;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 14px;color:#fff;">Impact</h2>
+      <p data-reveal style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:rgba(255,255,255,0.7);margin:0 0 clamp(36px,4vw,52px);max-width:640px;">A research-driven redesign that turned a buried, underused feature into a primary onboarding path.</p>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(16px,1.6vw,20px);">
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(44px,5.4vw,68px);font-weight:700;letter-spacing:-0.03em;color:#FF9900;line-height:1;">234%</div>
+          <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Increase in GSL product launches &mdash; from 370 to 865 trailing four-week launches &mdash; in the months following release.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(44px,5.4vw,68px);font-weight:700;letter-spacing:-0.03em;color:#FF9900;line-height:1;">85%</div>
+          <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Of customers using the new interface successfully added a GSL-based product to their portfolio.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(44px,5.4vw,68px);font-weight:700;letter-spacing:-0.03em;color:#FF9900;line-height:1;">7&rarr;2</div>
+          <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Clicks to add a product to a portfolio &mdash; the add-to-portfolio workflow cut from seven steps to two.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(44px,5.4vw,68px);font-weight:700;letter-spacing:-0.03em;color:#FF9900;line-height:1;">+Metrics</div>
+          <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Introduced Darkroom metric tracking to enable ongoing behavior monitoring post-launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0d0d0d;color:#fff;padding:clamp(40px,6vw,64px) 0;">
+    <div style="width:min(1120px,88vw);margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+      <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span>&larr;</span><span>Back to Work</span></a>
+      <a href="reachnow.html" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span style="color:rgba(255,255,255,0.55);">Next</span><span style="font-weight:500;">ReachNow</span><span>&rarr;</span></a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showProgress&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      progressRef: (el) => { this._progress = el; },
+    };
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+
+  componentDidMount() {
+    const useReveal = this.props.scrollReveal !== false;
+    const useProgress = this.props.showProgress !== false;
+
+    if (useReveal) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+
+      requestAnimationFrame(() => {
+        document.querySelectorAll('[data-reveal]').forEach((el) => {
+          const r = el.getBoundingClientRect();
+          el.style.transition = 'opacity .7s ease, transform .7s ease';
+          if (r.top > window.innerHeight * 0.88) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(28px)';
+            io.observe(el);
+          }
+        });
+      });
+      this._io = io;
+    }
+
+    if (useProgress) {
+      this._onScroll = () => {
+        if (!this._progress) return;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0;
+        this._progress.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', this._onScroll, { passive: true });
+      this._onScroll();
+    }
+  }
+}
+</script>
+</body>
+</html>

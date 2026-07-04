@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #ffffff; }
+  image-slot { display: block; }
+  image-slot::part(ring) { display: none; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="color:#1a1a1a;">
+
+  <!-- top nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:#0d0d0d;color:#fff;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,48px);">
+    <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:0.01em;opacity:0.92;padding:8px 14px;margin-left:-14px;border-radius:999px;transition:background .2s ease,opacity .2s ease,gap .2s ease;" style-hover="opacity:1;gap:14px;background:#414141;">
+      <span style="display:inline-flex;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 15.8333L4.16666 10L10 4.16667" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.8333 10H4.16666" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-weight:500;">Back to Work</span>
+    </a>
+    <a href="index.html#work" style="color:#fff;text-decoration:none;font-size:18px;opacity:0.7;line-height:1;display:inline-flex;align-items:center;justify-content:center;padding:8px;margin-right:-8px;border-radius:50%;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;"><path d="M15 5L5 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 5L15 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+  </nav>
+
+  <!-- reading progress -->
+  <div style="position:sticky;top:56px;z-index:49;height:3px;background:transparent;">
+    <div ref="{{ progressRef }}" style="height:100%;width:0%;background:#B08D57;transition:width .08s linear;"></div>
+  </div>
+
+  <!-- hero -->
+  <header style="position:relative;color:#fff;">
+    <div style="position:absolute;top:0;left:0;right:0;height:calc(100% - 230px);background:#1B2A4A;z-index:0;"></div>
+    <div style="position:relative;z-index:1;width:min(1120px,88vw);margin:0 auto;padding:clamp(40px,6vw,64px) 0 0;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
+      <div>
+        <h1 style="font-size:clamp(40px,7vw,76px);font-weight:700;letter-spacing:-0.03em;margin:0;line-height:0.98;">Blue Nile</h1>
+        <p style="font-size:clamp(15px,1.5vw,20px);margin:14px 0 0;opacity:0.85;font-weight:400;letter-spacing:0.01em;">E-Commerce Redesign</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;">
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">E-Commerce</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">UX Design</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Design Systems</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Mobile</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Desktop</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Consumer</span>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;z-index:1;width:min(1400px,95vw);margin-left:auto;margin-right:auto;margin-top:40px;">
+      <image-slot id="bn-hero" src="assets/bluenile-hero.png" fit="cover" style="width:100%;height:clamp(280px,44vw,580px);border-radius:20px;box-shadow:0 12px 32px rgba(0,0,0,0.16);" shape="rounded" radius="20" placeholder="Hero — bluenile.com wedding rings on mobile"></image-slot>
+    </div>
+  </header>
+
+  <!-- overview + my role -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,72px);align-items:start;">
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Project Summary</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 36px;">Buying a wedding ring is one of the most considered purchases a person will ever make. Blue Nile &mdash; one of the largest online jewelry retailers in the US &mdash; wanted to be there for that moment in a way that felt personal, trustworthy, and worthy of the occasion. They needed a redesigned wedding bands experience that matched the emotional weight of what they were selling.</p>
+        <h3 style="font-size:clamp(20px,2.2vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0 0 16px;">My Role</h3>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">Primary UX Designer. I collaborated with the Creative Director, Senior Visual Designer, and Blue Nile client stakeholders to redesign the wedding bands product line &mdash; from information architecture to final interactions &mdash; across desktop and mobile.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr;gap:28px;align-content:start;">
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#B08D57;margin-bottom:8px;">The Client</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Smashing Ideas &amp; Blue Nile &mdash; 2018</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#B08D57;margin-bottom:8px;">My Role</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Primary UX Designer</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#B08D57;margin-bottom:8px;">The Team</div>
+          <div style="font-size:15px;color:#444;line-height:1.65;">Creative Director, Senior Visual Designer &amp; Blue Nile client stakeholders</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the challenge -->
+  <section style="background:#f5f3ef;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <div data-reveal style="max-width:760px;margin-bottom:clamp(32px,4vw,48px);">
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">The Challenge</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">The existing wedding band experience made a high-consideration decision feel harder than it needed to be.</p>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-bottom:clamp(36px,5vw,56px);">
+        <div style="background:#fff;border:1px solid #e7e2d8;border-radius:14px;padding:30px 26px;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#B08D57;margin-bottom:12px;">Buried signals</div>
+          <p style="font-size:15px;line-height:1.65;color:#444;margin:0;">Key decision signals &mdash; metal type, ring style, fit, width &mdash; were buried behind inconsistent filters.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e7e2d8;border-radius:14px;padding:30px 26px;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#B08D57;margin-bottom:12px;">Mismatched hierarchy</div>
+          <p style="font-size:15px;line-height:1.65;color:#444;margin:0;">Content hierarchy didn't match how customers actually shopped for a ring.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e7e2d8;border-radius:14px;padding:30px 26px;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#B08D57;margin-bottom:12px;">Off-brand feel</div>
+          <p style="font-size:15px;line-height:1.65;color:#444;margin:0;">The overall experience didn't communicate Blue Nile's premium positioning.</p>
+        </div>
+      </div>
+      <div data-reveal>
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#9b9486;margin-bottom:16px;">Research &amp; customer journey mapping</div>
+        <image-slot id="bn-research" fit="contain" src="assets/bluenile-research.png" style="width:100%;height:auto;aspect-ratio:1200/450;background:#fff;border-radius:8px;" shape="rounded" radius="8" placeholder="Research artifacts — affinity mapping & personas"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- what i designed -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="max-width:760px;margin-bottom:clamp(36px,5vw,52px);">
+      <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">What I Designed</h2>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I redesigned the wedding bands line end-to-end &mdash; aligning the interface with how people actually choose a ring, across desktop, tablet, and mobile.</p>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:clamp(36px,5vw,56px);">
+      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:30px 26px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#B08D57;margin-bottom:12px;">Browsing &amp; Filtering</div>
+        <p style="font-size:15px;line-height:1.65;color:#444;margin:0;">I redesigned the filtering system to surface the right attributes in the right order &mdash; turning filters into intuitive decision-support tools, not obstacles.</p>
+      </div>
+      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:30px 26px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#B08D57;margin-bottom:12px;">Custom Wedding Band</div>
+        <p style="font-size:15px;line-height:1.65;color:#444;margin:0;">I designed the user flows and wireframes for a guided, step-by-step configuration feature &mdash; personalizing metal, style, and fit with choices reflected in real time.</p>
+      </div>
+      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:30px 26px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#B08D57;margin-bottom:12px;">Contextual Help</div>
+        <p style="font-size:15px;line-height:1.65;color:#444;margin:0;">An in-context help experience that surfaced guidance at the right moments in the purchase flow &mdash; answering questions without sending customers away from the page.</p>
+      </div>
+      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:30px 26px;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#B08D57;margin-bottom:12px;">Design Language</div>
+        <p style="font-size:15px;line-height:1.65;color:#444;margin:0;">Working with the visual design team, I helped define the design language system for the line &mdash; cohesive, premium, and unmistakably Blue Nile.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- final visual design (full-bleed) -->
+  <section style="background:#D5D6D8;padding-bottom:clamp(40px,6vw,64px);">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,80px) 0 clamp(28px,4vw,40px);">
+      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0;">Final Visual Design</h2>
+    </div>
+    <image-slot id="bn-devices" data-reveal fit="contain" src="assets/bluenile-devices.jpg" style="display:block;width:min(1120px,88vw);margin:0 auto;height:auto;aspect-ratio:1920/882;background:#D5D6D8;" shape="rect" radius="0" placeholder="Final UI across desktop, tablet & mobile"></image-slot>
+  </section>
+
+  <!-- result -->
+  <section style="background:#1B2A4A;color:#fff;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,64px);align-items:center;">
+        <div>
+          <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 22px;color:#fff;">Result</h2>
+          <p style="font-size:clamp(17px,1.7vw,22px);line-height:1.55;color:#fff;font-weight:500;letter-spacing:-0.01em;margin:0 0 18px;">An optimized retail experience &mdash; across desktop and mobile &mdash; that elevated the brand while simplifying the path from browsing to buying.</p>
+          <div style="width:54px;height:3px;background:#B08D57;border-radius:2px;"></div>
+        </div>
+        <image-slot id="bn-couple" fit="cover" src="assets/bluenile-couple.png" style="width:100%;height:auto;aspect-ratio:1200/800;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,0.28);" shape="rounded" radius="14" placeholder="Couple — the moment the experience serves"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0d0d0d;color:#fff;padding:clamp(40px,6vw,64px) 0;">
+    <div style="width:min(1120px,88vw);margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+      <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span>&larr;</span><span>Back to Work</span></a>
+      <a href="ryoma-ai.html" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span style="color:rgba(255,255,255,0.55);">Next</span><span style="font-weight:500;">RyomaAI</span><span>&rarr;</span></a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showProgress&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      progressRef: (el) => { this._progress = el; },
+    };
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+
+  componentDidMount() {
+    const useReveal = this.props.scrollReveal !== false;
+    const useProgress = this.props.showProgress !== false;
+
+    if (useReveal) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+
+      requestAnimationFrame(() => {
+        document.querySelectorAll('[data-reveal]').forEach((el) => {
+          const r = el.getBoundingClientRect();
+          el.style.transition = 'opacity .7s ease, transform .7s ease';
+          if (r.top > window.innerHeight * 0.88) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(28px)';
+            io.observe(el);
+          }
+        });
+      });
+      this._io = io;
+    }
+
+    if (useProgress) {
+      this._onScroll = () => {
+        if (!this._progress) return;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0;
+        this._progress.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', this._onScroll, { passive: true });
+      this._onScroll();
+    }
+  }
+}
+</script>
+</body>
+</html>

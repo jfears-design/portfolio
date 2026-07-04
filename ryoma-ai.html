@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #ffffff; }
+  image-slot { display: block; }
+  image-slot::part(ring) { display: none; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="color:#16181F;">
+
+  <!-- top nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:#16181F;color:#fff;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,48px);">
+    <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:0.01em;opacity:0.92;padding:8px 14px;margin-left:-14px;border-radius:999px;transition:background .2s ease,opacity .2s ease,gap .2s ease;" style-hover="opacity:1;gap:14px;background:#2a2d38;">
+      <span style="display:inline-flex;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 15.8333L4.16666 10L10 4.16667" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.8333 10H4.16666" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-weight:500;">Back to Work</span>
+    </a>
+    <a href="index.html#work" style="color:#fff;text-decoration:none;font-size:18px;opacity:0.7;line-height:1;display:inline-flex;align-items:center;justify-content:center;padding:8px;margin-right:-8px;border-radius:50%;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#2a2d38;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;"><path d="M15 5L5 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 5L15 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+  </nav>
+
+  <!-- reading progress -->
+  <div style="position:sticky;top:56px;z-index:49;height:3px;background:transparent;">
+    <div ref="{{ progressRef }}" style="height:100%;width:0%;background:#1176F8;transition:width .08s linear;"></div>
+  </div>
+
+  <!-- hero -->
+  <header style="position:relative;color:#fff;">
+    <div style="position:absolute;top:0;left:0;right:0;height:calc(100% - 230px);background:linear-gradient(165deg,#1A6FE4 0%,#155FC9 55%,#1153AE 100%);z-index:0;"></div>
+    <div style="position:relative;z-index:1;width:min(1120px,88vw);margin:0 auto;padding:clamp(40px,6vw,64px) 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:26px;">
+      <div>
+        <h1 style="font-size:clamp(40px,7vw,76px);font-weight:700;letter-spacing:-0.03em;margin:0;line-height:0.98;">RyomaAI</h1>
+        <p style="font-size:clamp(15px,1.5vw,20px);margin:16px 0 0;opacity:0.85;font-weight:400;letter-spacing:0.01em;max-width:560px;line-height:1.5;">AI Financial Advisory, End-to-End Design</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="border:1px solid rgba(255,255,255,0.45);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">AI / ML</span>
+        <span style="border:1px solid rgba(255,255,255,0.45);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Product Design</span>
+        <span style="border:1px solid rgba(255,255,255,0.45);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Brand Identity</span>
+        <span style="border:1px solid rgba(255,255,255,0.45);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Design Systems</span>
+        <span style="border:1px solid rgba(255,255,255,0.45);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Creative Direction</span>
+      </div>
+    </div>
+    <div style="position:relative;z-index:1;width:min(1400px,95vw);margin-left:auto;margin-right:auto;margin-top:40px;">
+      <image-slot id="ry-hero" src="assets/ry-hero-brand.png" fit="cover" style="width:100%;height:calc(min(1400px,95vw) * 1257 / 2740);border-radius:20px;box-shadow:0 12px 32px rgba(0,0,0,0.16);" shape="rounded" radius="20" placeholder="Marketing hero — RyomaAI product showcase"></image-slot>
+    </div>
+  </header>
+
+  <!-- overview + meta -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,72px);align-items:start;">
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Project Summary</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 22px;">RyomaAI is a conversational AI platform built for Japan&rsquo;s financial services industry. It guides consumers through discovery, education, and qualification, then hands them to a sales team, ready to close.</p>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I joined as the founding and sole designer. There was no brand, no design system, no marketing presence. I built everything from zero &mdash; across product UI, brand, marketing, research, and go-to-market materials &mdash; while the product and strategy evolved around me.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr;gap:28px;align-content:start;">
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1176F8;margin-bottom:8px;">The Client</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Ryoma Corporation<br>2025&ndash;Present</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1176F8;margin-bottom:8px;">My Role</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Founding Designer /<br>Design Director</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1176F8;margin-bottom:8px;">The Team</div>
+          <div style="font-size:15px;color:#444;line-height:1.7;">Solo designer, working directly with Chairman of the Board, CEO, CTO, and three Principal Engineers.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the challenge -->
+  <section style="background:#F4F6FA;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <div data-reveal style="max-width:820px;">
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 28px;">The Challenge</h2>
+        <p style="font-size:clamp(16px,1.3vw,20px);line-height:1.7;color:#2c2f38;margin:0 0 22px;font-weight:500;">Financial services in Japan faces compounding pressures: an aging workforce of insurance agents, consumers disengaged by jargon-heavy products, rising compliance costs, and digital channels that generate reach but not understanding. RyomaAI&rsquo;s answer was a conversational AI that could guide consumers the way a trusted advisor would &mdash; at scale.</p>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#555;margin:0;">Designing for that required more than good UI. The product needed to feel human, adapt to different client brands, and work for a market where trust is earned slowly and financial anxiety runs high.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- research -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,64px);align-items:start;">
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1176F8;margin-bottom:14px;">Research</div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Understanding the user, and the culture</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 20px;">Before designing for Japanese consumers, I needed to understand them and the visual and cultural context they inhabit.</p>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 20px;">I built five detailed user personas representing the Japanese financial services market, varying by age, financial literacy, trust disposition, and comfort with technology. I also researched Japanese-specific design patterns, color theory, typography conventions, and popular financial services websites. Japanese digital design has distinct conventions that differ significantly from Western defaults. Designing without that context would have produced something that felt foreign to the very users we were trying to reach.</p>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">The research informed everything that followed: the product&rsquo;s conversational tone, the avatar system, the marketing site messaging, and the decision to lead with empathy over features at every touchpoint.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-content:start;">
+        <image-slot id="persona-card-1" src="assets/persona-card-1.png" fit="cover" style="width:calc(50% - 7px);height:auto;aspect-ratio:2667/1500;background:#fff;border:1px solid #e7eaf0;border-radius:14px;box-shadow:0 3px 14px rgba(16,24,40,0.06);" shape="rounded" radius="14" placeholder="Persona — Hamada Shigeru"></image-slot>
+        <image-slot id="persona-card-2" src="assets/persona-card-2.png" fit="cover" style="width:calc(50% - 7px);height:auto;aspect-ratio:2667/1500;background:#fff;border:1px solid #e7eaf0;border-radius:14px;box-shadow:0 3px 14px rgba(16,24,40,0.06);" shape="rounded" radius="14" placeholder="Persona — Takeshita Hanako"></image-slot>
+        <image-slot id="persona-card-3" src="assets/persona-card-3.png" fit="cover" style="width:calc(50% - 7px);height:auto;aspect-ratio:2667/1500;background:#fff;border:1px solid #e7eaf0;border-radius:14px;box-shadow:0 3px 14px rgba(16,24,40,0.06);" shape="rounded" radius="14" placeholder="Persona — Kimura Takeo"></image-slot>
+        <image-slot id="persona-card-4" src="assets/persona-card-4.png" fit="cover" style="width:calc(50% - 7px);height:auto;aspect-ratio:2667/1500;background:#fff;border:1px solid #e7eaf0;border-radius:14px;box-shadow:0 3px 14px rgba(16,24,40,0.06);" shape="rounded" radius="14" placeholder="Persona — Ideka Setsuko"></image-slot>
+        <image-slot id="persona-card-5" src="assets/persona-card-5.png" fit="cover" style="width:calc(50% - 7px);height:auto;aspect-ratio:2667/1500;background:#fff;border:1px solid #e7eaf0;border-radius:14px;box-shadow:0 3px 14px rgba(16,24,40,0.06);" shape="rounded" radius="14" placeholder="Persona — Takayama Yusuke"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- product design -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(20px,3vw,32px) 0 clamp(48px,8vw,92px);">
+    <div data-reveal style="border-top:1px solid #e7eaf0;padding-top:clamp(40px,5vw,64px);margin-bottom:clamp(40px,5vw,64px);">
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1176F8;margin-bottom:14px;">Product Design</div>
+      <h2 style="font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-0.025em;margin:0;max-width:780px;">One brand system, every surface a consumer touches.</h2>
+    </div>
+
+    <!-- chat app generations -->
+    <div data-reveal style="margin-bottom:clamp(40px,5vw,64px);">
+      <h3 style="font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-0.015em;margin:0 0 16px;">Chat App &mdash; Three Generations</h3>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 36px;max-width:780px;">The core product is a conversational AI interface that guides users through financial product discovery. When I joined, engineering had built a functional prototype &mdash; the visual design, interaction model, and brand avatar system did not yet exist.</p>
+
+      <!-- generation 1 -->
+      <div style="background:#F4F6FA;border:1px solid #eaeef3;border-radius:18px;padding:clamp(24px,3vw,36px);margin-bottom:clamp(20px,2.5vw,28px);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,3.5vw,44px);align-items:center;">
+          <div>
+            <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+            <span style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid #dfe4ea;color:#64748b;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;">01</span>
+            <div>
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#94a3b8;margin-bottom:5px;">Inherited</div>
+              <h4 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0;">Engineering Prototype</h4>
+            </div>
+          </div>
+          <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.72;color:#444;margin:0;">What I inherited: a functional build that proved the concept but had no visual design, interaction model, or brand avatar system &mdash; the raw material I&rsquo;d shape into a product.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+            <image-slot id="ry-proto-2" src="assets/ry-proto-2.png" fit="cover" style="width:100%;height:auto;aspect-ratio:16/9;background:#fff;border:1px solid #e7eaf0;border-radius:5px;" shape="rounded" radius="5" placeholder="Prototype — chat"></image-slot>
+          </div>
+        </div>
+      </div>
+
+      <!-- generation 2 -->
+      <div style="background:#F4F6FA;border:1px solid #eaeef3;border-radius:18px;padding:clamp(24px,3vw,36px);margin-bottom:clamp(20px,2.5vw,28px);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,3.5vw,44px);align-items:center;">
+          <div>
+            <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+            <span style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#1176F8;color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;">02</span>
+            <div>
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1176F8;margin-bottom:5px;">2025 &middot; First Design</div>
+              <h4 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0;">A product, and a brand-avatar system</h4>
+            </div>
+          </div>
+          <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.72;color:#444;margin:0;">My first month. I designed the initial UI, shaped the micro-interactions, and solved a specific challenge: the platform needed fully custom brand avatars for each client. The AI doesn&rsquo;t just speak as Ryoma &mdash; it can represent a client&rsquo;s brand entirely, from a samurai figure to a stylized character to a human representative. That required a flexible system that could hold radically different visual identities without losing coherence.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+            <image-slot id="ry-2025-2" src="assets/ry-2025-greeting.png" fit="cover" style="width:100%;height:auto;aspect-ratio:3/2;background:#fff;border:1px solid #e7eaf0;border-radius:5px;" shape="rounded" radius="5" placeholder="Greeting"></image-slot>
+            <image-slot id="ry-2025-3" src="assets/ry-2025-compare.png" fit="cover" style="width:100%;height:auto;aspect-ratio:3/2;background:#fff;border:1px solid #e7eaf0;border-radius:5px;" shape="rounded" radius="5" placeholder="Product comparison"></image-slot>
+          </div>
+        </div>
+      </div>
+
+      <!-- generation 3 -->
+      <div style="background:#F4F6FA;border:1px solid #eaeef3;border-radius:18px;padding:clamp(24px,3vw,36px);margin-bottom:clamp(30px,4vw,44px);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,3.5vw,44px);align-items:center;">
+          <div>
+            <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+            <span style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#1176F8;color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;">03</span>
+            <div>
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1176F8;margin-bottom:5px;">2026 &middot; Research-Informed Iteration</div>
+              <h4 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0;">Refined around how Japan actually buys</h4>
+            </div>
+          </div>
+          <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.72;color:#444;margin:0;">After a year of customer presentations and real user feedback, a clearer picture had emerged of how Japanese consumers experience financial conversations &mdash; cautiously, preferring to feel guided rather than sold to. The 2026 update reflected that learning: refined interactions, stronger visual hierarchy, and a more considered handoff between AI and human advisor.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+            <image-slot id="ry-app-2" src="assets/ry-app-chat.png" fit="cover" style="width:100%;height:auto;aspect-ratio:3040/1850;background:#fff;border:1px solid #e7eaf0;border-radius:5px;" shape="rounded" radius="5" placeholder="AI chat"></image-slot>
+            <image-slot id="ry-app-3" src="assets/ry-app-chat2.png" fit="cover" style="width:100%;height:auto;aspect-ratio:3040/1850;background:#fff;border:1px solid #e7eaf0;border-radius:5px;" shape="rounded" radius="5" placeholder="AI chat 2"></image-slot>
+          </div>
+        </div>
+      </div>
+
+      <blockquote style="margin:0;border-left:3px solid #1176F8;padding:4px 0 4px 24px;max-width:680px;">
+        <p style="font-size:clamp(18px,2vw,24px);line-height:1.45;font-weight:600;letter-spacing:-0.01em;color:#16181F;margin:0;">&ldquo;This wasn&rsquo;t a visual refresh. It was the product catching up to what we&rsquo;d learned.&rdquo;</p>
+      </blockquote>
+    </div>
+
+    <!-- product ecosystem -->
+    <div data-reveal style="border-top:1px solid #e7eaf0;padding-top:clamp(36px,4vw,52px);margin-bottom:clamp(40px,5vw,64px);">
+      <h3 style="font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-0.015em;margin:0 0 16px;">Product Ecosystem</h3>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 36px;max-width:780px;">The chat app was one surface in a broader product ecosystem. I designed each touchpoint to extend the same brand system and support the same user journey.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:start;">
+        <div style="background:#fff;border:1px solid #e7eaf0;border-radius:16px;overflow:hidden;">
+          <image-slot id="ry-eco-1" src="assets/ry-dashboard.png" fit="cover" position="50% 0%" style="width:100%;height:auto;aspect-ratio:3/2;background:#fff;" placeholder="Analytics dashboard"></image-slot>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-size:17px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;">Analytics Dashboard</div>
+            <p style="font-size:14.5px;line-height:1.62;color:#555;margin:0;">Enterprise-facing reporting for client institutions &mdash; visibility into conversation performance, lead quality, and funnel metrics.</p>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e7eaf0;border-radius:16px;overflow:hidden;">
+          <image-slot id="ry-eco-2" src="assets/ry-signage.png" fit="cover" position="50% 50%" style="width:100%;height:auto;aspect-ratio:3/2;background:#fff;" placeholder="Digital signage"></image-slot>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-size:17px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;">Digital Signage</div>
+            <p style="font-size:14.5px;line-height:1.62;color:#555;margin:0;">An entry point to the app in physical spaces, designed to draw in walk-in customers and transition them into a conversation with Ryoma naturally.</p>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e7eaf0;border-radius:16px;overflow:hidden;">
+          <image-slot id="ry-eco-3" src="assets/ry-kiosk-1.png" fit="cover" position="50% 50%" style="width:100%;height:auto;aspect-ratio:3/2;background:#fff;" placeholder="Kiosk interface"></image-slot>
+          <div style="padding:22px 22px 26px;">
+            <div style="font-size:17px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;">Kiosk Interface</div>
+            <p style="font-size:14.5px;line-height:1.62;color:#555;margin:0;">A touch-based interface for in-person environments, using the same chat-style interaction model as the app &mdash; continuity across physical and digital touchpoints.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- brand & marketing site -->
+    <div data-reveal style="border-top:1px solid #e7eaf0;padding-top:clamp(36px,4vw,52px);margin-bottom:clamp(40px,5vw,64px);">
+      <h3 style="font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-0.015em;margin:0 0 16px;">Brand &amp; Marketing Site</h3>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 32px;max-width:780px;">The site needed to serve two audiences: Japanese financial services institutions evaluating a partnership, and global investors evaluating an opportunity. I wrote the full IA and copy first: structure, voice, narrative hierarchy, and per-page copy, presented across two rounds of team review before a pixel was designed. Then I prototyped the full design in Figma Make and coded the production site with Claude. Concept to launch-ready in under a week, solo, no engineering lift.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start;margin-bottom:clamp(30px,4vw,44px);">
+        <image-slot id="ry-page-home" src="assets/ry-page-home.png" fit="cover" position="50% 0%" style="width:100%;height:calc((min(1120px,88vw)) / 3 * 3.2558);background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Home"></image-slot>
+        <image-slot id="ry-page-about" src="assets/ry-page-about.png" fit="cover" position="50% 0%" style="width:100%;height:calc((min(1120px,88vw)) / 3 * 3.0073);background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="About Us"></image-slot>
+        <image-slot id="ry-page-contact" src="assets/ry-page-contact.png" fit="cover" position="50% 0%" style="width:100%;height:calc((min(1120px,88vw)) / 3 * 1.2249);background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Contact"></image-slot>
+      </div>
+    </div>
+
+    <!-- presentation system -->
+    <div data-reveal style="border-top:1px solid #e7eaf0;padding-top:clamp(36px,4vw,52px);">
+      <h3 style="font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-0.015em;margin:0 0 16px;">Presentation System</h3>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 32px;max-width:780px;">I designed two core decks and built a presentation system around them &mdash; a style guide, component library, and layout templates. Then I trained Jonathan Epstein (Chairman) and John Bennet (CEO) to use Figma so they could build and update decks independently.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:clamp(30px,4vw,44px);">
+        <image-slot id="deck-title" src="assets/deck-title.png" fit="cover" style="width:100%;height:auto;aspect-ratio:16/9;background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Title slide"></image-slot>
+        <image-slot id="deck-crisis" src="assets/deck-crisis.png" fit="cover" style="width:100%;height:auto;aspect-ratio:16/9;background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Industry crisis slide"></image-slot>
+        <image-slot id="deck-meet" src="assets/deck-meet.png" fit="cover" style="width:100%;height:auto;aspect-ratio:16/9;background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Product intro slide"></image-slot>
+        <image-slot id="deck-personas" src="assets/deck-personas.png" fit="cover" style="width:100%;height:auto;aspect-ratio:16/9;background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Customer types slide"></image-slot>
+        <image-slot id="deck-agents" src="assets/deck-agents.png" fit="cover" style="width:100%;height:auto;aspect-ratio:16/9;background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Persona studio slide"></image-slot>
+        <image-slot id="deck-funnel" src="assets/deck-funnel.png" fit="cover" style="width:100%;height:auto;aspect-ratio:16/9;background:#fff;border:1px solid #e2e6ec;border-radius:5px;" shape="rounded" radius="5" placeholder="Funnel comparison slide"></image-slot>
+      </div>
+
+      <image-slot id="deck-rail" src="assets/deck-rail.png" fit="contain" style="width:100%;height:auto;aspect-ratio:1607/308;background:#fff;border:1px solid #e2e6ec;border-radius:8px;margin-bottom:clamp(30px,4vw,44px);" shape="rounded" radius="8" placeholder="Full deck slide rail"></image-slot>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,40px);align-items:center;">
+        <div style="background:#16181F;color:#fff;border-radius:18px;padding:clamp(32px,4vw,44px);">
+          <div style="font-size:clamp(44px,5.5vw,68px);font-weight:700;letter-spacing:-0.03em;line-height:1;">I designed <span style="color:#7FB2FF;">2</span>.</div>
+          <div style="font-size:clamp(44px,5.5vw,68px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-top:4px;">The system produced <span style="color:#7FB2FF;">10</span>.</div>
+        </div>
+        <div>
+          <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.72;color:#444;margin:0 0 20px;">When the Habito pitch came in with a 24-hour turnaround, I delivered 8 domain-expert slides as part of a 20-slide deck &mdash; half the remaining slides built by team members using my templates.</p>
+          <blockquote style="margin:0;border-left:3px solid #1176F8;padding:4px 0 4px 22px;">
+            <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.5;font-weight:600;color:#16181F;margin:0 0 10px;">&ldquo;I will never cease to be amazed at how you turn things into these amazing slides.&rdquo;</p>
+            <cite style="font-style:normal;font-size:13px;letter-spacing:0.03em;text-transform:uppercase;color:#94a3b8;">Mathew Shea, CTO</cite>
+          </blockquote>
+        </div>
+      </div>
+
+      <div style="background:#F4F6FA;border:1px solid #eaeef3;border-radius:18px;padding:clamp(24px,3vw,36px);margin-top:clamp(24px,3vw,32px);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,3.5vw,44px);align-items:center;">
+          <div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1176F8;margin-bottom:10px;">The Foundation</div>
+            <h4 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0 0 14px;">Not just decks &mdash; a system</h4>
+            <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.72;color:#444;margin:0;">A documented style guide &mdash; color, typography, shadows &mdash; plus a component library and layout templates. The system is what let non-designers produce on-brand decks without me in the room.</p>
+          </div>
+          <image-slot id="deck-styleguide" src="assets/styleguide.png" fit="cover" style="width:100%;height:auto;aspect-ratio:1109/891;background:#fff;border:1px solid #e2e6ec;border-radius:8px;" shape="rounded" radius="8" placeholder="Presentation style guide"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="background:#16181F;color:#fff;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 14px;color:#fff;">Impact</h2>
+      <p data-reveal style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:rgba(255,255,255,0.66);margin:0 0 clamp(36px,4vw,52px);max-width:640px;">Founding-team design that took a bold idea from blank page to a fundable, multi-platform product &mdash; solo.</p>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(16px,1.6vw,20px);margin-bottom:clamp(36px,4.5vw,56px);">
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-0.03em;color:#7FB2FF;line-height:1;">1 week</div>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Marketing site from concept to live, no engineering lift.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-0.03em;color:#7FB2FF;line-height:1;">2 &rarr; 10</div>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Decks produced from a system I built and taught.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-0.03em;color:#7FB2FF;line-height:1;">2 UI Updates</div>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Of the AI Chat application, informed by customer testing and real user feedback.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
+          <div style="font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-0.03em;color:#7FB2FF;line-height:1;">Solo</div>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.72);margin:16px 0 0;">Every surface: product, brand, marketing, research, presentations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0d0d0d;color:#fff;padding:clamp(40px,6vw,64px) 0;">
+    <div style="width:min(1120px,88vw);margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+      <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span>&larr;</span><span>Back to Work</span></a>
+      <a href="cloudscape-migration.html" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span style="color:rgba(255,255,255,0.55);">Next</span><span style="font-weight:500;">Cloudscape Migration</span><span>&rarr;</span></a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showProgress&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      progressRef: (el) => { this._progress = el; },
+    };
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+
+  componentDidMount() {
+    const useReveal = this.props.scrollReveal !== false;
+    const useProgress = this.props.showProgress !== false;
+
+    if (useReveal) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+
+      requestAnimationFrame(() => {
+        document.querySelectorAll('[data-reveal]').forEach((el) => {
+          const r = el.getBoundingClientRect();
+          el.style.transition = 'opacity .7s ease, transform .7s ease';
+          if (r.top > window.innerHeight * 0.88) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(28px)';
+            io.observe(el);
+          }
+        });
+      });
+      this._io = io;
+    }
+
+    if (useProgress) {
+      this._onScroll = () => {
+        if (!this._progress) return;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0;
+        this._progress.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', this._onScroll, { passive: true });
+      this._onScroll();
+    }
+  }
+}
+</script>
+</body>
+</html>

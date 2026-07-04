@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #ffffff; }
+  a { text-decoration: none; color: inherit; }
+  image-slot { display: block; }
+  image-slot::part(ring) { display: none; }
+  [data-about-photo] { display: none; }
+  @media (max-width: 767px) {
+    [data-about-photo] { display: block; }
+  }
+
+  /* mobile layout */
+  @media (max-width: 680px) {
+    [data-nav-extra] { display: none; }
+    [data-nav-links] { gap: 4px; }
+  }
+  @media (max-width: 900px) {
+    [data-featured-grid] { grid-template-columns: 1fr !important; }
+    [data-featured-grid] > div:first-child { min-height: 240px !important; }
+  }
+  @media (max-width: 600px) {
+    [data-work-grid] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 480px) {
+    [data-hero-title] { white-space: normal !important; font-size: 38px !important; }
+  }
+  @media (max-width: 680px) {
+    [data-hero-header] { background-image: none !important; background-color: #E6D0F7 !important; }
+    [data-hero-gradient] { display: none !important; }
+  }
+  [data-nav-menu] { display: none; }
+  [data-nav-menu][data-open] { display: flex; }
+  [data-nav-toggle] { display: none; }
+  @media (max-width: 680px) {
+    [data-nav-links] { display: none !important; }
+    [data-nav-toggle] { display: flex !important; }
+    [data-credibility-strip] { display: none !important; }
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="color:#1a1a1a;">
+
+  <!-- top nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:#0d0d0d;color:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,48px);">
+    <a href="#top" data-nav-link="" style="font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px;margin-left:-14px;border-radius:999px;transition:background .2s ease;white-space:nowrap;" style-hover="background:#414141;">Jasmine Fears</a>
+    <button data-nav-toggle aria-label="Menu" style="align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:transparent;border:none;color:#fff;cursor:pointer;flex:0 0 auto;" style-hover="background:#414141;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round"></path><path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round"></path><path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round"></path></svg></button>
+    <div data-nav-links style="display:flex;align-items:center;gap:clamp(20px,3vw,40px);font-size:14px;letter-spacing:0.02em;">
+      <a href="#work" data-nav-link="" style="opacity:0.95;padding:8px 14px;border-radius:999px;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;">Work</a>
+      <a href="#about" data-nav-link="" style="opacity:0.8;padding:8px 14px;border-radius:999px;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;">About</a>
+      <a href="#contact" data-nav-link="" style="opacity:0.8;padding:8px 14px;border-radius:999px;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;">Contact</a>
+      <span data-nav-extra style="width:1px;height:22px;background:rgba(255,255,255,0.25);margin:0 2px;"></span>
+      <div data-nav-extra style="display:flex;align-items:center;gap:4px;">
+        <a href="mailto:jaz@jfears.com" data-nav-icon="" aria-label="Email" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;opacity:0.85;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 7L13.03 12.7C12.7213 12.8934 12.3643 12.996 12 12.996C11.6357 12.996 11.2787 12.8934 10.97 12.7L2 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <a href="https://www.linkedin.com/in/jfears/" target="_blank" rel="noopener" data-nav-icon="" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;opacity:0.85;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9H2V21H6V9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- mobile nav menu -->
+  <div data-nav-menu style="position:sticky;top:64px;z-index:49;background:#0d0d0d;color:#fff;flex-direction:column;padding:8px clamp(20px,5vw,48px) 20px;gap:2px;border-top:1px solid #262626;">
+    <a href="#work" data-nav-link="" style="padding:12px 6px;font-size:15px;opacity:0.95;">Work</a>
+    <a href="#about" data-nav-link="" style="padding:12px 6px;font-size:15px;opacity:0.9;">About</a>
+    <a href="#contact" data-nav-link="" style="padding:12px 6px;font-size:15px;opacity:0.9;">Contact</a>
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 6px 4px;">
+      <a href="mailto:jaz@jfears.com" aria-label="Email" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#2A2A2A;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 7L13.03 12.7C12.7213 12.8934 12.3643 12.996 12 12.996C11.6357 12.996 11.2787 12.8934 10.97 12.7L2 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      <a href="https://www.linkedin.com/in/jfears/" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#2A2A2A;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9H2V21H6V9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <header id="top" data-hero-header style="position:relative;background:#e2d9fa url('assets/hero-bg.png') no-repeat right center;background-size:cover;color:#1a1a1a;overflow:hidden;">
+    <div data-hero-gradient style="position: absolute; inset: 0; background: linear-gradient(90deg, #EEE7FAEB, #EEE7FAEB, #EEE7FAEB, rgba(234,223,250,0) 64%)"></div>
+    <div style="position:relative;z-index:1;width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,7vw,84px) 0 clamp(44px,6vw,72px);">
+      <div style="max-width:600px;">
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6a6390;margin-bottom:clamp(16px,2.4vw,22px);">Principal Product Designer · AWS · AI</div>
+        <h1 data-hero-title style="font-size:clamp(30px,4.4vw,54px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;margin:0;white-space:nowrap;">Complex problems.<br><span style="color:#6762d9;">Simple experiences.</span></h1>
+        <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.6;color:#3a3646;margin:clamp(16px,2vw,22px) 0 0;max-width:46ch;font-weight:400;">From AI-powered fintech to enterprise cloud tools and consumer apps, I bring structure to ambiguity, simplicity to complexity, and a founder's mindset to every project.</p>
+        <a href="#work" data-hero-cta="" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;margin-top:clamp(22px,2.8vw,30px);background:#0d0d0d;color:#fff;font-size:15px;font-weight:600;letter-spacing:0.01em;padding:14px 26px;border-radius:999px;transition:gap .25s ease, transform .25s ease, box-shadow .25s ease;" style-hover="gap:16px;transform:translateY(-2px);box-shadow:0 8px 16px rgba(13,13,13,0.28);"><span data-cta-fill="" style="position:absolute;inset:0;background:#333333;opacity:0;transition:opacity .35s ease;"></span><span style="position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;">View My Work <svg data-cta-arrow="" width="18" height="18" viewBox="0 0 20 20" fill="none" style="display:block;transition:transform .25s ease;"><path d="M10 15.8333L15.8333 10L10 4.16667" stroke="#fff" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.16667 10H15.8333" stroke="#fff" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- credibility strip -->
+  <div data-credibility-strip style="background:#ffffff;border-bottom:1px solid #ececec;color:#6a6a76;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:14px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 20px;font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;">
+      <span>12+ Years Experience</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:#c9c9d1;"></span>
+      <span>Consumer &amp; Enterprise</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:#c9c9d1;"></span>
+      <span>UX &amp; Product Design</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:#c9c9d1;"></span>
+      <span>Design Systems</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:#c9c9d1;"></span>
+      <span>AI</span>
+    </div>
+  </div>
+
+  <!-- selected work -->
+  <section id="work" style="background:#f6f6f7;scroll-margin-top:72px;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(56px,9vw,104px) 0;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:clamp(32px,4vw,48px);">
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0;">Selected Work</h2>
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#999;">6 case studies</span>
+      </div>
+
+      <!-- featured: RyomaAI -->
+      <a href="ryoma-ai.html" data-card="" style="display:block;border-radius:18px;overflow:hidden;border:1px solid #ececec;background:#fff;margin-bottom:clamp(22px,3vw,30px);transition:transform .28s ease, box-shadow .28s ease;" style-hover="transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,0.12);">
+        <div data-featured-grid style="display:grid;grid-template-columns:1.08fr 1fr;">
+          <div style="position:relative;min-height:clamp(300px,33vw,420px);background:#1B1A33;overflow:hidden;">
+            <image-slot id="ry-card-hero" src="assets/ry-card-thumb.png" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;" placeholder="RyomaAI hero"></image-slot>
+            <span data-img-overlay="" style="position:absolute;inset:0;background:#1A6FE4;opacity:0;transition:opacity .3s ease;pointer-events:none;"></span>
+          </div>
+          <div style="padding:clamp(28px,3.5vw,52px);display:flex;flex-direction:column;justify-content:center;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px;">
+              <div>
+                <div style="font-size:11.5px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#9a9a9a;margin-bottom:12px;">AI Financial Advisory, End-to-End Design</div>
+                <h3 style="font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.02em;margin:0;">RyomaAI</h3>
+              </div>
+              <span data-arrow="" style="flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:#0d0d0d;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;"><span data-arrow-fill="" style="position:absolute;inset:-1px;border-radius:50%;background:#414141;opacity:0;transition:opacity .35s ease;"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:#555;margin:0 0 22px;max-width:44ch;">Product UX, brand identity, and investor materials for a customer-safe AI advisory platform built for Japan.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:6px 13px;font-size:12px;color:#555;">AI</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:6px 13px;font-size:12px;color:#555;">Fintech</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:6px 13px;font-size:12px;color:#555;">Brand Identity</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:6px 13px;font-size:12px;color:#555;">Product Design</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- grid of 5 -->
+      <div data-work-grid style="display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(22px,3vw,30px);">
+
+        <!-- AWS Service Catalog (Cloudscape Migration) -->
+        <a href="cloudscape-migration.html" data-card="" style="display:block;border-radius:18px;overflow:hidden;border:1px solid #ececec;background:#fff;transition:transform .28s ease, box-shadow .28s ease;" style-hover="transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,0.12);">
+          <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:#1B2530;">
+            <image-slot id="cs-hero" fit="cover" style="position:absolute;inset:0;width:100%;height:100%;" placeholder="Cloudscape hero"></image-slot>
+            <span data-img-overlay="" style="position:absolute;inset:0;background:#232F3E;opacity:0;transition:opacity .3s ease;pointer-events:none;"></span>
+          </div>
+          <div style="padding:clamp(18px,1.8vw,22px);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:11px;">
+              <div>
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#9a9a9a;margin-bottom:7px;">AWS Service Catalog</div>
+                <h3 style="font-size:clamp(20px,1.9vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0;">Cloudscape Migration</h3>
+              </div>
+              <span data-arrow="" style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#0d0d0d;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;"><span data-arrow-fill="" style="position:absolute;inset:-1px;border-radius:50%;background:#414141;opacity:0;transition:opacity .35s ease;"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:#555;margin:0 0 14px;">Migrating 128 console pages to Cloudscape while learning to design for developers — a user group that works against standard UX conventions.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">AWS</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Enterprise</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Design Systems</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Product Design</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Getting Started Library -->
+        <a href="aws-getting-started-library.html" data-card="" style="display:block;border-radius:18px;overflow:hidden;border:1px solid #ececec;background:#fff;transition:transform .28s ease, box-shadow .28s ease;" style-hover="transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,0.12);">
+          <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:#232F3E;">
+            <img src="assets/aws-hero.jpg" alt="Getting Started Library" style="width:100%;height:100%;object-fit:cover;display:block;"><div data-img-overlay="" style="position:absolute;inset:0;background:#232F3E;opacity:0;transition:opacity .28s ease;pointer-events:none;"></div>
+          </div>
+          <div style="padding:clamp(18px,1.8vw,22px);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:11px;">
+              <div>
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#9a9a9a;margin-bottom:7px;">Research-Led Developer Tools Redesign</div>
+                <h3 style="font-size:clamp(20px,1.9vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0;">Getting Started Library</h3>
+              </div>
+              <span data-arrow="" style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#0d0d0d;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;"><span data-arrow-fill="" style="position:absolute;inset:-1px;border-radius:50%;background:#414141;opacity:0;transition:opacity .35s ease;"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:#555;margin:0 0 14px;">Redesigning AWS Service Catalog's Getting Started Library drove a 234% increase in product launches among IT admins.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">AWS</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Enterprise</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">UX Research</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Usability Testing</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ReachNow -->
+        <a href="reachnow.html" data-card="" style="display:block;border-radius:18px;overflow:hidden;border:1px solid #ececec;background:#fff;transition:transform .28s ease, box-shadow .28s ease;" style-hover="transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,0.12);">
+          <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:#30ABCE;">
+            <img src="assets/reachnow-hero.jpg" alt="ReachNow" style="width:100%;height:100%;object-fit:cover;display:block;"><div data-img-overlay="" style="position:absolute;inset:0;background:#30ABCE;opacity:0;transition:opacity .28s ease;pointer-events:none;"></div>
+          </div>
+          <div style="padding:clamp(18px,1.8vw,22px);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:11px;">
+              <div>
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#9a9a9a;margin-bottom:7px;">Mobility Ecosystem &amp; App Redesign</div>
+                <h3 style="font-size:clamp(20px,1.9vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0;">ReachNow</h3>
+              </div>
+              <span data-arrow="" style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#0d0d0d;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;"><span data-arrow-fill="" style="position:absolute;inset:-1px;border-radius:50%;background:#414141;opacity:0;transition:opacity .35s ease;"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:#555;margin:0 0 14px;">Designing the end-to-end UX of BMW's hybrid mobility platform — hailing rides, locating and unlocking free-floating vehicles, and guiding users through operating an unfamiliar car.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">BMW</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Mobility</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Connected Vehicle</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Service Design</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Philips Sonicare -->
+        <a href="philips-sonicare.html" data-card="" style="display:block;border-radius:18px;overflow:hidden;border:1px solid #ececec;background:#fff;transition:transform .28s ease, box-shadow .28s ease;" style-hover="transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,0.12);">
+          <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:#0C3B47;">
+            <img src="assets/philips-hero.jpg" alt="Philips Sonicare" style="width:100%;height:100%;object-fit:cover;display:block;"><div data-img-overlay="" style="position:absolute;inset:0;background:#0C3B47;opacity:0;transition:opacity .28s ease;pointer-events:none;"></div>
+          </div>
+          <div style="padding:clamp(18px,1.8vw,22px);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:11px;">
+              <div>
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#9a9a9a;margin-bottom:7px;">Connected Health App Design</div>
+                <h3 style="font-size:clamp(20px,1.9vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0;">Philips Sonicare</h3>
+              </div>
+              <span data-arrow="" style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#0d0d0d;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;"><span data-arrow-fill="" style="position:absolute;inset:-1px;border-radius:50%;background:#414141;opacity:0;transition:opacity .35s ease;"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:#555;margin:0 0 14px;">90% of users improved their brushing technique through a connected app that turned a smart toothbrush into a personal dental coach.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Mobile App</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Connected Devices</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Health &amp; Wellness</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Consumer</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Blue Nile -->
+        <a href="blue-nile.html" data-card="" style="display:block;border-radius:18px;overflow:hidden;border:1px solid #ececec;background:#fff;transition:transform .28s ease, box-shadow .28s ease;" style-hover="transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,0.12);">
+          <div style="position:relative;aspect-ratio:16/10;overflow:hidden;background:#1B2A4A;">
+            <img src="assets/bluenile-hero.png" alt="Blue Nile" style="width:100%;height:100%;object-fit:cover;display:block;"><div data-img-overlay="" style="position:absolute;inset:0;background:#1B2A4A;opacity:0;transition:opacity .28s ease;pointer-events:none;"></div>
+          </div>
+          <div style="padding:clamp(18px,1.8vw,22px);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:11px;">
+              <div>
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#9a9a9a;margin-bottom:7px;">High-Consideration E-Commerce Design</div>
+                <h3 style="font-size:clamp(20px,1.9vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0;">Blue Nile</h3>
+              </div>
+              <span data-arrow="" style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#0d0d0d;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;"><span data-arrow-fill="" style="position:absolute;inset:-1px;border-radius:50%;background:#414141;opacity:0;transition:opacity .35s ease;"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:#555;margin:0 0 14px;">Redesigning one of the highest-consideration shopping experiences in e-commerce.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">E-Commerce</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Product Configuration</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Luxury Retail</span>
+              <span style="border:1px solid #e4e4e4;background:#fafafa;border-radius:999px;padding:5px 12px;font-size:12px;color:#555;">Consumer</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- about me -->
+  <section id="about" style="background:#fff;scroll-margin-top:72px;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(56px,9vw,104px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,5vw,72px);align-items:start;">
+      <div>
+        <img data-about-photo="" src="assets/jasmine-headshot.jpg" alt="Jasmine Fears" style="width:160px;height:160px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;margin:0 0 24px;">
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">About Me</h2>
+        <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.78;color:#555;margin:0 0 20px;">I'm equally comfortable in the mess of early discovery and the rigor of a shipping deadline. That range, from the first ambiguous brief through launch and iteration, is where I do my best work.</p>
+        <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.78;color:#555;margin:0 0 20px;">What I've noticed across every project, every industry: the most important work happens before the wireframes. By digging into research, talking to users and partners, and working closely with cross-functional teams, I connect information that doesn't always seem related. That's where the real problem, and the real opportunity, tends to emerge.</p>
+        <p style="font-size:clamp(15px,1.1vw,16.5px);line-height:1.78;color:#555;margin:0 0 28px;">My instinct is to assess, find the opportunity, and act. I don't wait for someone else to frame the problem.</p>
+        <h3 style="font-size:15px;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#1a1a1a;margin:0 0 14px;">Experience</h3>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:14.5px;line-height:1.5;"><span style="color:#1a1a1a;font-weight:600;">RyomaAI <span style="font-weight:400;color:#777;">&mdash; Principal Product Designer</span></span><span style="color:#999;white-space:nowrap;">2025&ndash;Present</span></div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:14.5px;line-height:1.5;"><span style="color:#1a1a1a;font-weight:600;">Amazon Web Services <span style="font-weight:400;color:#777;">&mdash; Senior UX Designer, Service Catalog</span></span><span style="color:#999;white-space:nowrap;">2018&ndash;2024</span></div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:14.5px;line-height:1.5;"><span style="color:#1a1a1a;font-weight:600;">Smashing Ideas <span style="font-weight:400;color:#777;">&mdash; Senior UX Designer</span></span><span style="color:#999;white-space:nowrap;">2012&ndash;2018</span></div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:14.5px;line-height:1.5;"><span style="color:#1a1a1a;font-weight:600;">Rusty George Creative <span style="font-weight:400;color:#777;">&mdash; Graphic &amp; Web Designer</span></span><span style="color:#999;white-space:nowrap;">2010&ndash;2012</span></div>
+        </div>
+      </div>
+      <div data-about-grid="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
+        <div style="background:#fafafa;border:1px solid #ececec;border-radius:16px;padding:26px 24px;">
+          <div style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background-color: #E6D0F7"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg></div>
+          <h3 style="font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin:0 0 9px;">Full Lifecycle Design</h3>
+          <p style="font-size:13.5px;line-height:1.62;color:#666;margin:0;">From first brief to post-launch iteration, I own the process end to end. No gaps, no handoffs.</p>
+        </div>
+        <div style="background:#fafafa;border:1px solid #ececec;border-radius:16px;padding:26px 24px;">
+          <div style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background-color: #E6D0F7"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="m2 17 10 5 10-5"></path><path d="m2 12 10 5 10-5"></path></svg></div>
+          <h3 style="font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin:0 0 9px;">Systems Thinking &amp; Design Systems</h3>
+          <p style="font-size:13.5px;line-height:1.62;color:#666;margin:0;">I design systems, not just screens. Component libraries, decision frameworks, design languages, built to scale.</p>
+        </div>
+        <div style="background:#fafafa;border:1px solid #ececec;border-radius:16px;padding:26px 24px;">
+          <div style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background-color: #E6D0F7"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></div>
+          <h3 style="font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin:0 0 9px;">Research-Led Strategy</h3>
+          <p style="font-size:13.5px;line-height:1.62;color:#666;margin:0;">I find the opportunity before the brief exists. Research drives direction, not just validation.</p>
+        </div>
+        <div style="background:#fafafa;border:1px solid #ececec;border-radius:16px;padding:26px 24px;">
+          <div style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background-color: #E6D0F7"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"></path></svg></div>
+          <h3 style="font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin:0 0 9px;">Founder's Mentality</h3>
+          <p style="font-size:13.5px;line-height:1.62;color:#666;margin:0;">Strategic instinct, creative range, full accountability. I show up like it's my product.</p>
+        </div>
+        <div style="background:#fafafa;border:1px solid #ececec;border-radius:16px;padding:26px 24px;">
+          <div style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background-color: #E6D0F7"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></div>
+          <h3 style="font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin:0 0 9px;">Cross-Domain Range</h3>
+          <p style="font-size:13.5px;line-height:1.62;color:#666;margin:0;">12+ years across AI fintech, enterprise cloud, connected devices, consumer apps, and e-commerce. The domain changes. The rigor doesn't.</p>
+        </div>
+        <div style="background:#fafafa;border:1px solid #ececec;border-radius:16px;padding:26px 24px;">
+          <div style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; background-color: #E6D0F7"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+          <h3 style="font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin:0 0 9px;">Cross-Functional Fluency</h3>
+          <p style="font-size:13.5px;line-height:1.62;color:#666;margin:0;">I work fluidly with engineers, PMs, and executives. Teams stay aligned. Products ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <footer id="contact" style="background:#0d0d0d;color:#fff;scroll-margin-top:72px;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(56px,9vw,104px) 0 clamp(36px,5vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,64px);align-items:center;">
+      <div>
+        <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-0.025em;line-height:1.08;margin:0;">Currently open to new opportunities. <span style="color: #E6D0F7">Let's talk.</span></h2>
+        <p style="display:flex;align-items:flex-start;gap:11px;font-size:clamp(15px,1.2vw,17px);line-height:1.7;color:#b6b6b6;margin:24px 0 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex:0 0 auto;margin-top:4px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="#b6b6b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Great products start with great conversations. If you're building something meaningful, I'd love to connect.</span></p>
+        <p style="display:flex;align-items:flex-start;gap:11px;font-size:clamp(15px,1.2vw,17px);line-height:1.7;color:#b6b6b6;margin:14px 0 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex:0 0 auto;margin-top:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#b6b6b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="10" r="3" stroke="#b6b6b6" stroke-width="2"></circle></svg><span>Working remotely from Kailua-Kona, Hawaii.</span></p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <a href="mailto:jaz@jfears.com" data-contact="" style="display:flex;align-items:center;gap:16px;background:#2A2A2A;border-radius:14px;padding:18px 20px;transition:background .22s ease;" style-hover="background:#414141;">
+          <span style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#555555;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 7L13.03 12.7C12.7213 12.8934 12.3643 12.996 12 12.996C11.6357 12.996 11.2787 12.8934 10.97 12.7L2 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="flex:1 1 auto;"><span style="display:block;font-size:14.5px;font-weight:600;color:#fff;">Email</span><span style="display:block;font-size:13px;color:#9a9a9a;margin-top:2px;">jaz@jfears.com</span></span>
+          <span style="flex:0 0 auto;display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+        <a href="https://www.linkedin.com/in/jfears/" target="_blank" rel="noopener" data-contact="" style="display:flex;align-items:center;gap:16px;background:#2A2A2A;border-radius:14px;padding:18px 20px;transition:background .22s ease;" style-hover="background:#414141;">
+          <span style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#555555;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 9H2V21H6V9Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="flex:1 1 auto;"><span style="display:block;font-size:14.5px;font-weight:600;color:#fff;">LinkedIn</span><span style="display:block;font-size:13px;color:#9a9a9a;margin-top:2px;">linkedin.com/in/jfears</span></span>
+          <span style="flex:0 0 auto;display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+        <a href="resume.html" target="_blank" data-contact="" style="display:flex;align-items:center;gap:16px;background:#2A2A2A;border-radius:14px;padding:18px 20px;transition:background .22s ease;" style-hover="background:#414141;">
+          <span style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#555555;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 9H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 13H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 17H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="flex:1 1 auto;"><span style="display:block;font-size:14.5px;font-weight:600;color:#fff;">View Resume</span><span style="display:block;font-size:13px;color:#9a9a9a;margin-top:2px;">Experience &amp; skills</span></span>
+          <span style="flex:0 0 auto;display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="position:relative;z-index:1;"><path d="M7 7H17V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1f1f1f;">
+      <div style="width:min(1120px,88vw);margin:0 auto;padding:22px 0;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
+        <span style="font-size:13px;color:#777;">© 2026 Jasmine Fears. All rights reserved.</span>
+        <span style="font-size:13px;color:#777;letter-spacing:0.02em;">Thoughtfully solving complex problems.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const navMenu = document.querySelector('[data-nav-menu]');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        if (navMenu.hasAttribute('data-open')) navMenu.removeAttribute('data-open');
+        else navMenu.setAttribute('data-open', '');
+      });
+      navMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => navMenu.removeAttribute('data-open'));
+      });
+    }
+
+    // Remember scroll position when opening a case study; restore it on return via "back to work".
+    const SCROLL_KEY = 'jf-home-scroll';
+    document.querySelectorAll('[data-card]').forEach((card) => {
+      card.addEventListener('click', () => {
+        try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch (e) {}
+      });
+    });
+    if (window.location.hash === '#work') {
+      let saved = null;
+      try { saved = sessionStorage.getItem(SCROLL_KEY); } catch (e) {}
+      if (saved !== null) {
+        const html = document.documentElement;
+        const prev = html.style.scrollBehavior;
+        html.style.scrollBehavior = 'auto';
+        window.scrollTo(0, parseInt(saved, 10) || 0);
+        requestAnimationFrame(() => { html.style.scrollBehavior = prev || ''; });
+      }
+    }
+
+    const cta = document.querySelector('[data-hero-cta]');
+    if (cta) {
+      const ctaFill = cta.querySelector('[data-cta-fill]');
+      const ctaArrow = cta.querySelector('[data-cta-arrow]');
+      cta.addEventListener('mouseenter', () => {
+        if (ctaFill) ctaFill.style.opacity = '1';
+        if (ctaArrow) ctaArrow.style.transform = 'translateX(5px)';
+      });
+      cta.addEventListener('mouseleave', () => {
+        if (ctaFill) ctaFill.style.opacity = '0';
+        if (ctaArrow) ctaArrow.style.transform = 'translateX(0)';
+      });
+    }
+
+    document.querySelectorAll('[data-card]').forEach((card) => {
+      const arrowFill = card.querySelector('[data-arrow-fill]');
+      const overlay = card.querySelector('[data-img-overlay]');
+      const arrowPaths = card.querySelectorAll('[data-arrow] svg path');
+      card.addEventListener('mouseenter', () => {
+        if (arrowFill) arrowFill.style.opacity = '1';
+        if (overlay) overlay.style.opacity = '0.2';
+      });
+      card.addEventListener('mouseleave', () => {
+        if (arrowFill) arrowFill.style.opacity = '0';
+        if (overlay) overlay.style.opacity = '0';
+      });
+    });
+
+    document.querySelectorAll('[data-contact]').forEach((card) => {
+      const arrow = card.querySelector(':scope > span:last-child');
+      if (arrow) arrow.style.transition = 'transform .22s ease';
+      card.addEventListener('mouseenter', () => {
+        card.style.background = '#414141';
+        if (arrow) arrow.style.transform = 'translate(4px, -4px)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.background = '#2A2A2A';
+        if (arrow) arrow.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #ffffff; }
+  image-slot { display: block; }
+  image-slot::part(ring) { display: none; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="color:#1a1a1a;">
+
+  <!-- top nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:#0d0d0d;color:#fff;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,48px);">
+    <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:0.01em;opacity:0.92;padding:8px 14px;margin-left:-14px;border-radius:999px;transition:background .2s ease,opacity .2s ease,gap .2s ease;" style-hover="opacity:1;gap:14px;background:#414141;">
+      <span style="display:inline-flex;align-items:center;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 15.8333L4.16666 10L10 4.16667" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.8333 10H4.16666" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-weight:500;">Back to Work</span>
+    </a>
+    <a href="index.html#work" style="color:#fff;text-decoration:none;font-size:18px;opacity:0.7;line-height:1;display:inline-flex;align-items:center;justify-content:center;padding:8px;margin-right:-8px;border-radius:50%;transition:background .2s ease,opacity .2s ease;" style-hover="opacity:1;background:#414141;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;"><path d="M15 5L5 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 5L15 15" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+  </nav>
+
+  <!-- reading progress -->
+  <div style="position:sticky;top:56px;z-index:49;height:3px;background:transparent;">
+    <div ref="{{ progressRef }}" style="height:100%;width:0%;background:#81B52A;transition:width .08s linear;"></div>
+  </div>
+
+  <!-- hero -->
+  <header style="position:relative;color:#fff;">
+    <div style="position:absolute;top:0;left:0;right:0;height:calc(100% - 230px);background:#30ABCE;z-index:0;"></div>
+    <div style="position:relative;z-index:1;width:min(1120px,88vw);margin:0 auto;padding:clamp(40px,6vw,64px) 0 0;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
+      <div>
+        <h1 style="font-size:clamp(40px,7vw,76px);font-weight:700;letter-spacing:-0.03em;margin:0;line-height:0.98;">ReachNow</h1>
+        <p style="font-size:clamp(15px,1.5vw,20px);margin:14px 0 0;opacity:0.85;font-weight:400;letter-spacing:0.01em;">Mobility Ecosystem &amp; App Redesign</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;">
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Mobility</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Connected Vehicle</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Service Design</span>
+          <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">BMW</span>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;z-index:1;width:min(1400px,95vw);margin-left:auto;margin-right:auto;margin-top:40px;">
+      <image-slot id="rn-hero" style="width:100%;height:clamp(280px,44vw,580px);border-radius:20px;box-shadow:0 12px 32px rgba(0,0,0,0.16);" shape="rounded" radius="20" placeholder="Drop hero image — phone + BMW"></image-slot>
+    </div>
+  </header>
+
+  <!-- project summary -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,72px);align-items:start;">
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Project Summary</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">ReachNow, the mobility services division of the BMW Group, had built a suite of transportation services for over 100,000 members. Car sharing, ride hailing, and multi-day rentals were spread across separate applications. They partnered with Smashing Ideas to unify these into a single, seamless experience built for their public launch across New York, Seattle, and Portland. The goal was ambitious: create something that had never existed before, a single app where members could choose to drive themselves or be driven, with a connected experience that extended from their phone to the car itself.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr;gap:28px;align-content:start;">
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#81B52A;margin-bottom:8px;">The Client</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Smashing Ideas &amp; BMW &mdash; 2018</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#81B52A;margin-bottom:8px;">My Role</div>
+          <div style="font-size:15px;color:#444;line-height:1.55;">Lead UX Designer</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#81B52A;margin-bottom:8px;">The Team</div>
+          <div style="font-size:15px;color:#444;line-height:1.65;">
+            <div><strong style="color:#1a1a1a;font-weight:700;">ReachNow Team:</strong> Creative Director, C-Level Stakeholders</div>
+            <div><strong style="color:#1a1a1a;font-weight:700;">Smashing Ideas Team:</strong> Design Director, 1 UX Researcher, 1 Design Production Artist, 3 Front End Engineers, 3 Back End Engineers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the challenge -->
+  <section style="background:#f5f5f5;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,64px);align-items:center;">
+        <div>
+          <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">The Challenge</h2>
+          <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">ReachNow was solving a problem no one had solved before. Combining a ride-hailing experience with a free-floating car rental in a single app meant designing for two fundamentally different mental models. A member requesting a ride is passive, waiting to be taken somewhere. A member renting a car is active, making decisions about where to go, how long to stay, and how to operate an unfamiliar vehicle. That last point introduced a layer of complexity unique to this product. Unlike Uber or Zipcar, ReachNow members were getting into BMW vehicles with controls and shifters that work differently than most cars. The app had to bridge the physical and digital, guiding members through the car itself, not just the booking experience. At the same time, the existing beta had eroded member trust through bugs and friction. We were designing a new experience for an audience that already had reasons to be skeptical.</p>
+        </div>
+        <image-slot id="rn-challenge" style="width:100%;height:clamp(240px,26vw,320px);" shape="rounded" radius="14" placeholder="RIDE + DRIVE graphic"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- research & discovery -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,64px);align-items:start;">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;">
+        <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:26px 20px;text-align:center;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_member-interview.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <div style="font-size:14px;font-weight:600;color:#1a1a1a;line-height:1.4;">Member interviews</div>
+        </div>
+        <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:26px 20px;text-align:center;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_audit-calls.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <div style="font-size:14px;font-weight:600;color:#1a1a1a;line-height:1.4;">Audits of member service calls</div>
+        </div>
+        <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:26px 20px;text-align:center;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_service-reps.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <div style="font-size:14px;font-weight:600;color:#1a1a1a;line-height:1.4;">Interviews with service representatives</div>
+        </div>
+        <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:26px 20px;text-align:center;transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.08);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_member-reviews.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <div style="font-size:14px;font-weight:600;color:#1a1a1a;line-height:1.4;">Analysis of member reviews</div>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Research &amp; Discovery</h2>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 18px;">Before any design work began, we invested heavily in understanding ReachNow members. The research phase included more than 50 member interviews, audits of member service calls, interviews with service representatives, and analysis of member reviews across multiple platforms. The goal wasn't just to identify pain points. It was to understand how people thought about urban mobility and what role ReachNow could realistically play in their lives.</p>
+        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">What emerged was a nuanced picture of eight distinct member types, each with different motivations, comfort levels, and use cases for the service. These findings became the foundation for everything that followed: the personas, the workshops, and ultimately the design decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- personas -->
+  <section style="background:#f5f5f5;padding:clamp(48px,8vw,92px) 0;">
+    <div style="width:min(1120px,88vw);margin:0 auto;">
+      <div data-reveal style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 28px;">
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0;">Personas</h2>
+        <div style="display:flex;gap:10px;">
+          <button onPointerDown="{{ pressPrev }}" onPointerUp="{{ releaseHold }}" onPointerLeave="{{ releaseHold }}" onPointerCancel="{{ releaseHold }}" aria-label="Previous personas" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,0,0,0.12);background:#fff;color:#1a1a1a;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease, border-color .2s ease;" style-hover="background:#1a1a1a;color:#fff;border-color:#1a1a1a;">&larr;</button>
+          <button onPointerDown="{{ pressNext }}" onPointerUp="{{ releaseHold }}" onPointerLeave="{{ releaseHold }}" onPointerCancel="{{ releaseHold }}" aria-label="Next personas" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,0,0,0.12);background:#fff;color:#1a1a1a;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease, border-color .2s ease;" style-hover="background:#1a1a1a;color:#fff;border-color:#1a1a1a;">&rarr;</button>
+        </div>
+      </div>
+    </div>
+    <div ref="{{ carouselRef }}" data-reveal style="display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;padding-bottom:14px;padding-left:max(6vw, (100vw - 1120px) / 2);padding-right:24px;scroll-behavior:smooth;">
+        <image-slot id="rn-persona-1" src="assets/persona-kyle.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Kyle, 28"></image-slot>
+        <image-slot id="rn-persona-2" src="assets/persona-stacy.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Stacy, 24"></image-slot>
+        <image-slot id="rn-persona-3" src="assets/persona-carlos.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Carlos, 41"></image-slot>
+        <image-slot id="rn-persona-4" src="assets/persona-norm.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Norm, 69"></image-slot>
+        <image-slot id="rn-persona-5" src="assets/persona-saundra.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Saundra, 32"></image-slot>
+        <image-slot id="rn-persona-6" src="assets/persona-mohan.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Mohan, 36"></image-slot>
+        <image-slot id="rn-persona-7" src="assets/persona-di.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Di, 38"></image-slot>
+        <image-slot id="rn-persona-8" src="assets/persona-brendan.png" style="flex:0 0 auto;width:clamp(240px,24vw,320px);height:clamp(310px,31vw,414px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Persona — Brendan, 34"></image-slot>
+      </div>
+  </section>
+
+  <!-- workshops & alignment -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Workshops &amp; Alignment</h2>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);margin-bottom:clamp(28px,4vw,44px);">
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">With research findings in hand, we shifted into a series of collaborative workshops with ReachNow stakeholders. The goal was to move from individual insights to shared understanding, aligning the team around who we were designing for and what mattered most to them.<br><br>Together we defined our target demographics, pressure-tested our personas, and mapped out the ideal member journey.</p>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">That journey mapping work evolved into story mapping, giving the team a shared framework for prioritizing features and sequencing the experience. By the time we moved into design, there was genuine alignment across both teams on what we were building and why.</p>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
+      <image-slot id="rn-ws-1" src="assets/workshop-1.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+      <image-slot id="rn-ws-2" src="assets/workshop-2.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+      <image-slot id="rn-ws-3" src="assets/workshop-3.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+      <image-slot id="rn-ws-4" src="assets/workshop-4.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+      <image-slot id="rn-ws-5" src="assets/workshop-5.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+      <image-slot id="rn-ws-6" src="assets/workshop-6.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+      <image-slot id="rn-ws-7" src="assets/workshop-7.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+      <image-slot id="rn-ws-8" src="assets/workshop-8.jpg" style="width:100%;aspect-ratio:4/3;" shape="rounded" radius="8" placeholder="Workshop photo"></image-slot>
+    </div>
+  </section>
+
+  <!-- journey maps -->
+  <section style="background:#f5f5f5;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <h2 data-reveal style="font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-0.01em;margin:0 0 22px;">Journey Maps</h2>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start;">
+        <image-slot id="rn-journey-1" fit="contain" style="width:100%;height:auto;aspect-ratio:1200/777;" shape="rounded" radius="8" placeholder="Journey map — Ride Hailing"></image-slot>
+        <image-slot id="rn-journey-2" fit="contain" style="width:100%;height:auto;aspect-ratio:1200/777;" shape="rounded" radius="8" placeholder="Journey map — Drive"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- design & iteration -->
+  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+    <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Design &amp; Iteration</h2>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);margin-bottom:clamp(28px,4vw,44px);">
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">With a clear direction established, we moved into design. The complexity of the product demanded a rigorous approach. We were designing not just for two distinct service experiences, but for the moments where they intersected and for the physical interactions that happened inside the car itself. User flows, wireframes, and prototypes were built and tested continuously, with unmoderated virtual testing and in-person moderated sessions running on a weekly cadence.</p>
+      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">Having a dedicated ReachNow vehicle on-site throughout the engagement was invaluable. It meant we could test the physical-digital interactions in real conditions, unlocking the car, navigating the in-car controls, understanding how the experience felt when you were actually sitting in a BMW rather than looking at a screen. That kind of testing shaped decisions that wireframes alone never could have.</p>
+    </div>
+    <div data-reveal style="margin-bottom:clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,40px);align-items:start;">
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:12px;">App overview flow</div>
+        <image-slot id="rn-di-appoverview" fit="contain" src="assets/di-app-overview.jpg" style="width:100%;height:auto;aspect-ratio:2640/1680;border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="App overview flow"></image-slot>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:12px;">Onboarding flow</div>
+        <image-slot id="rn-di-onboarding" fit="contain" src="assets/di-onboarding.png" style="width:100%;height:auto;aspect-ratio:4096/2661;border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Onboarding flow"></image-slot>
+      </div>
+    </div>
+    <div data-reveal>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:12px;">Wire-flows</div>
+      <image-slot id="rn-wireflow" fit="contain" style="width:100%;height:auto;aspect-ratio:1200/353;border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Wire-flow diagram"></image-slot>
+    </div>
+    <div data-reveal style="margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,3vw,44px);align-items:start;">
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:12px;">Our workspace</div>
+        <image-slot id="rn-di-workspace" fit="cover" src="assets/di-workspace.jpg" style="width:100%;height:clamp(260px,30vw,380px);border:1px solid rgba(0,0,0,0.1);border-radius:5px;" shape="rounded" radius="5" placeholder="Workspace photo"></image-slot>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#888;margin-bottom:12px;">Interactive prototype</div>
+        <div style="display:flex;justify-content:center;">
+          <image-slot id="rn-di-prototype" fit="contain" src="assets/di-prototype.png" style="width:clamp(128px,14.78vw,187px);height:clamp(260px,30vw,380px);" shape="rect" radius="0" placeholder="Prototype mockup"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- final visual design -->
+  <section style="background:#f5f5f5;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 36px;">Final Visual Design</h2>
+      <div data-reveal style="display:flex;justify-content:center;">
+        <image-slot id="rn-final" fit="contain" src="assets/reachnow-final.png" style="width:100%;max-width:1000px;height:auto;aspect-ratio:1084/628;--frame-bg:transparent;" shape="rect" radius="0" placeholder="Final visual design — app screens"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- outcomes -->
+  <section style="background:#103B46;color:#fff;">
+    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
+      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 36px;color:#fff;">Outcomes</h2>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,1.6vw,20px);">
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);transition:transform .25s ease;" style-hover="transform:translateY(-4px);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin-bottom:18px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_launch.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 10px;color:#fff;">New Unified Experience</h3>
+          <p style="font-size:15px;line-height:1.72;color:rgba(255,255,255,0.72);margin:0;">The result of a 10-month engagement was an all-new unified experience that launched across New York, Seattle, and Portland for over 100,000 ReachNow members.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);transition:transform .25s ease;" style-hover="transform:translateY(-4px);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin-bottom:18px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_ride-drive.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 10px;color:#fff;">Seamless Ride &amp; Drive Experience</h3>
+          <p style="font-size:15px;line-height:1.72;color:rgba(255,255,255,0.72);margin:0;">For the first time, members could seamlessly choose between Drive and Ride within a single app, positioning ReachNow as the only company operating multiple mobility services within one mobile experience.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);transition:transform .25s ease;" style-hover="transform:translateY(-4px);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin-bottom:18px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_growth.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 10px;color:#fff;">1100+ Members</h3>
+          <p style="font-size:15px;line-height:1.72;color:rgba(255,255,255,0.72);margin:0;">ReachNow grew to 1,100+ registered members and a fleet of 730 cars during the project period.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);transition:transform .25s ease;" style-hover="transform:translateY(-4px);">
+          <div style="width:54px;height:54px;border-radius:50%;background:#81B52A;margin-bottom:18px;display:flex;align-items:center;justify-content:center;"><img src="assets/icon_exceed.svg" alt="" style="width:30px;height:30px;display:block;"></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 10px;color:#fff;">Exceeded Client Expectations</h3>
+          <p style="font-size:15px;line-height:1.72;color:rgba(255,255,255,0.72);margin:0;">ReachNow's leadership described the outcome as exceeding their expectations, citing Smashing's ability to get inside the minds of their members and deliver a cohesive experience that would propel the business forward.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#0d0d0d;color:#fff;padding:clamp(40px,6vw,64px) 0;">
+    <div style="width:min(1120px,88vw);margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+      <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span>&larr;</span><span>Back to Work</span></a>
+      <a href="philips-sonicare.html" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span style="color:rgba(255,255,255,0.55);">Next</span><span style="font-weight:500;">Philips Sonicare</span><span>&rarr;</span></a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showProgress&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  stopHold() {
+    if (this._holdInt) { clearInterval(this._holdInt); this._holdInt = null; }
+    if (this._holdTO) { clearTimeout(this._holdTO); this._holdTO = null; }
+    if (this._carousel) {
+      // restore smooth behavior for subsequent taps
+      this._carousel.style.scrollBehavior = 'smooth';
+    }
+  }
+
+  startHold(dir) {
+    const el = this._carousel;
+    if (!el) return;
+    this.stopHold();
+    // immediate one-card nudge (smooth)
+    const card = el.querySelector('image-slot');
+    const step = card ? card.getBoundingClientRect().width + 20 : 300;
+    el.scrollBy({ left: dir * step, behavior: 'smooth' });
+    // after a short delay, begin continuous scrolling while held
+    this._holdTO = setTimeout(() => {
+      el.style.scrollBehavior = 'auto';
+      this._holdInt = setInterval(() => {
+        el.scrollLeft += dir * 12;
+      }, 16);
+    }, 320);
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    this.stopHold();
+  }
+
+  renderVals() {
+    return {
+      progressRef: (el) => { this._progress = el; },
+      carouselRef: (el) => { this._carousel = el; },
+      pressPrev: () => this.startHold(-1),
+      pressNext: () => this.startHold(1),
+      releaseHold: () => this.stopHold(),
+    };
+  }
+
+  componentDidMount() {
+    const useReveal = this.props.scrollReveal !== false;
+    const useProgress = this.props.showProgress !== false;
+
+    if (useReveal) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+
+      requestAnimationFrame(() => {
+        document.querySelectorAll('[data-reveal]').forEach((el) => {
+          const r = el.getBoundingClientRect();
+          el.style.transition = 'opacity .7s ease, transform .7s ease';
+          if (r.top > window.innerHeight * 0.88) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(28px)';
+            io.observe(el);
+          }
+        });
+      });
+      this._io = io;
+    }
+
+    if (useProgress) {
+      this._onScroll = () => {
+        if (!this._progress) return;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0;
+        this._progress.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', this._onScroll, { passive: true });
+      this._onScroll();
+    }
+  }
+}
+</script>
+</body>
+</html>
