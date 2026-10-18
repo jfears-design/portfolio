@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cloudscape Migration — Jasmine Fears</title>
-<meta name="description" content="The design system for building AWS products and experiences.">
+<title>Cloudscape Migration | Jasmine Fears</title>
+<meta name="description" content="Migrating 128 AWS Service Catalog pages while improving parameter guidance, client-side validation, and launch recovery.">
 <link rel="canonical" href="https://jfears.com/cloudscape-migration.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Cloudscape Migration — Jasmine Fears">
-<meta property="og:description" content="The design system for building AWS products and experiences.">
+<meta property="og:title" content="Cloudscape Migration | Jasmine Fears">
+<meta property="og:description" content="Migrating 128 AWS Service Catalog pages while improving parameter guidance, client-side validation, and launch recovery.">
 <meta property="og:url" content="https://jfears.com/cloudscape-migration.html">
 <meta property="og:image" content="https://jfears.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cloudscape Migration — Jasmine Fears">
-<meta name="twitter:description" content="The design system for building AWS products and experiences.">
+<meta name="twitter:title" content="Cloudscape Migration | Jasmine Fears">
+<meta name="twitter:description" content="Migrating 128 AWS Service Catalog pages while improving parameter guidance, client-side validation, and launch recovery.">
 <meta name="twitter:image" content="https://jfears.com/assets/og-image.jpg">
 <script src="./support.js"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fea5b40dfdad4eae8004b4e7aa0adfc0"}'></script><!-- End Cloudflare Web Analytics -->
@@ -30,6 +30,96 @@
   body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background: #ffffff; }
   image-slot { display: block; }
   image-slot::part(ring) { display: none; }
+
+.cs-wrap{width:min(1120px,88vw);margin:auto}.cs-section{padding:clamp(44px,6vw,76px) 0}.cs-tint{background:#f5f7f9}.cs-section h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.025em;line-height:1.16;margin:0 0 24px}.cs-section h3{font-size:clamp(21px,2.2vw,27px);line-height:1.25;margin:38px 0 16px}.cs-section p{font-size:clamp(16px,1.15vw,18px);line-height:1.75;color:#444;max-width:850px;margin:0 0 18px}.cs-section figure{margin:32px 0 0}.cs-section figure img{display:block;width:100%;height:auto}.cs-section figcaption{font-size:14px;color:#596675;line-height:1.5;margin-top:12px}.cs-intro{display:grid;grid-template-columns:minmax(0,2fr) minmax(230px,1fr);gap:64px}.cs-meta{margin:0}.cs-meta dt{font-size:12px;color:#a85e00;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin:0 0 7px}.cs-meta dd{font-size:15px;line-height:1.6;color:#444;margin:0 0 24px}.cs-stats{display:flex;flex-wrap:wrap;gap:14px 24px;font-size:14px;font-weight:600;line-height:1.5;margin-top:24px}.cs-stats span:before{content:'•';color:#e68800;margin-right:8px}.cs-overview{background:linear-gradient(90deg,#eaf8fc 0%,#eef5fb 50%,#f5f6fa 100%)}.cs-finding-table{border-collapse:collapse;width:100%;font-size:16px;line-height:1.6;background:white;margin:28px 0}.cs-finding-table th,.cs-finding-table td{text-align:left;padding:20px 24px;border-bottom:1px solid #dce3e9;vertical-align:top;width:50%}.cs-finding-table th{color:#536476;font-size:13px;text-transform:uppercase;letter-spacing:.05em;background:#f0f4f8}.cs-pullquote{border-left:3px solid #f90;padding:8px 0 8px 24px;margin:30px 0;font-size:19px;line-height:1.6;max-width:850px}.graphic-needed{border:1px dashed #bd7b27;background:#fff8ec;padding:24px;margin:32px 0}.graphic-needed>span{font-size:12px;font-weight:700;color:#945600;text-transform:uppercase;letter-spacing:.08em}.graphic-needed h3{margin:10px 0}.graphic-needed p{font-size:15px;margin:0}.cs-compare,.cs-launches{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.cs-compare img{border:1px solid #dce3e9;border-radius:6px}.cs-impact{background:#232f3e;color:white}.cs-impact p{color:#dce3eb}.cs-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.cs-metric{padding:26px;border:1px solid #536170;border-radius:12px}.cs-metric strong{display:block;font-size:clamp(29px,3vw,42px);line-height:1.15;letter-spacing:-.03em;color:#fff}.cs-metric p{font-size:15px;line-height:1.6;margin:16px 0 0}.cs-map{max-height:340px;object-fit:cover;object-position:top}.cs-expand{border:0;background:transparent;padding:0;width:100%;cursor:zoom-in;text-align:left;color:#526779;font:inherit}.cs-blueprint{overflow:auto}.cs-blueprint img{min-width:850px}.cs-blueprint-note{font-size:14px!important;color:#596675!important}.cs-launches figure{margin-top:20px}.cs-launches img{border:1px solid #dce3e9}.cs-section details summary{cursor:pointer;font-weight:600;margin-top:24px}.cs-section details{padding:18px 0}.cs-section details figure{margin:20px 0}@media(max-width:760px){.cs-intro{grid-template-columns:1fr;gap:32px}.cs-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cs-meta dd{margin:0}.cs-metrics,.cs-compare,.cs-launches{grid-template-columns:1fr}.cs-finding-table td,.cs-finding-table th{padding:14px 12px;font-size:14px}.cs-stats{gap:10px}.cs-pullquote{font-size:17px}.cs-blueprint{margin-right:-6vw;padding-right:6vw}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+
+/* Redesigned console gallery */
+.cs-console-gallery{overflow:hidden;background:radial-gradient(ellipse at 76% 4%,rgba(255,221,184,.7),transparent 48%),linear-gradient(115deg,#c9f4f6 0%,#d2eafa 34%,#dce1fa 65%,#acd3ff 100%);padding-bottom:40px}
+.cs-carousel{--page-width:min(66vw,1000px);position:relative;margin:35px 0 0}
+.cs-carousel-stage{height:clamp(320px,46vw,650px);position:relative;isolation:isolate}
+.cs-carousel-slide{position:absolute;top:0;left:50%;width:var(--page-width);height:100%;margin:0!important;display:flex;align-items:center;justify-content:center;transform:translateX(calc(-50% + var(--slot) * 87%)) scale(var(--scale));opacity:var(--opacity);z-index:var(--layer);transition:transform 1000ms cubic-bezier(.22,.68,.15,1),opacity 700ms ease;will-change:transform}
+.cs-carousel-slide[data-distant]{visibility:hidden;transition:none}
+.cs-carousel-slide img{width:100%!important;height:100%!important;object-fit:contain;filter:drop-shadow(0 16px 22px rgba(27,56,90,.19));border-radius:5px}
+.cs-carousel-footer{display:flex;align-items:center;justify-content:center;gap:24px;margin:26px auto 0;width:88vw;max-width:1120px}
+.cs-carousel-caption{min-width:230px;text-align:center;font-size:15px!important;font-weight:600;color:#24384d!important;margin:0!important}
+.cs-carousel-controls{display:flex;gap:8px}
+.cs-carousel-controls button{display:grid;place-items:center;width:42px;height:42px;border:1px solid #728ba5;border-radius:50%;background:rgba(255,255,255,.6);color:#20364b;cursor:pointer;font:20px Arial;transition:background .2s}
+.cs-carousel-controls button:hover{background:white}
+.cs-carousel-controls button:focus-visible{outline:3px solid #0073bb;outline-offset:3px}
+.cs-carousel-controls [data-gallery-pause]{font-size:15px}
+@media(max-width:760px){.cs-carousel{--page-width:82vw}.cs-carousel-stage{height:clamp(260px,72vw,440px)}.cs-carousel-footer{flex-direction:column;gap:14px}.cs-console-gallery{padding-bottom:32px}}
+@media(prefers-reduced-motion:reduce){.cs-carousel-slide{transition:none!important}}
+
+
+/* Cloudscape-inspired carousel controls */
+.cs-carousel-controls{gap:12px}
+.cs-carousel-controls button{width:44px;height:36px;border:2px solid #0972d3;border-radius:20px;background:#fff;color:#0972d3;font-size:20px;font-weight:700;box-shadow:none}
+.cs-carousel-controls button:hover{background:#f2f8fd;border-color:#033160;color:#033160}
+.cs-carousel-controls button:active{background:#d3e7f9}
+.cs-carousel-controls button:focus-visible{outline:2px solid #0972d3;outline-offset:3px}
+.cs-carousel-controls [data-gallery-pause]{width:auto;min-width:100px;padding:0 18px;display:flex;gap:8px;font-size:14px;line-height:1;font-weight:700}
+
+
+.cs-overview figure{max-width:900px;margin:36px auto 0}
+
+.cs-section figure.cs-former-workflow{max-width:900px;margin:36px auto 0}
+
+.cs-launch-tenets{display:flex;flex-wrap:wrap;gap:12px 28px;margin:28px 0;color:#243c53;font-size:15px;font-weight:600}
+.cs-launch-tenets span{border-left:3px solid #f90;padding-left:12px}
+.cs-launch-progression{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:40px 0 24px;align-items:start}
+.cs-launch-progression .cs-launch-stage{margin:0}
+.cs-stage-number{font-size:13px;color:#536779;font-weight:700;letter-spacing:.08em}
+.cs-launch-stage h3{font-size:21px;line-height:1.3;margin:10px 0 20px;min-height:55px}
+.cs-source-crop{position:relative;overflow:clip;background:#f2f3f3;border:1px solid #d3dce4;border-radius:5px}
+.cs-section .cs-source-crop img{position:absolute;max-width:none;height:auto;display:block}
+.cs-launch-stage figcaption{font-size:15px;line-height:1.65;margin-top:18px}
+.cs-source-link{display:inline-block;margin-top:12px;font-size:14px;line-height:1.5;color:#0064a5;text-underline-offset:3px}
+.cs-section .cs-evidence-note{font-size:13px;color:#596675;max-width:none}
+.cs-validation-example{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:center;margin:32px 0 44px}
+.cs-validation-example figure{margin:0}
+.cs-validation-example h4,.cs-validation-checkpoints h4{font-size:20px;line-height:1.3;margin:0 0 14px}
+.cs-validation-example p{font-size:16px}
+.cs-validation-checkpoints{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:28px 0}
+.cs-validation-checkpoints article{background:#fff;padding:24px;border-top:3px solid #0073bb;border-radius:0 0 6px 6px}
+.cs-validation-checkpoints article>span{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#536779;margin-bottom:14px}
+.cs-validation-checkpoints p{font-size:15px;line-height:1.65;margin-bottom:0}
+@media(max-width:760px){.cs-launch-progression,.cs-validation-example,.cs-validation-checkpoints{grid-template-columns:1fr}.cs-launch-progression{gap:36px;max-width:440px;margin-left:auto;margin-right:auto}.cs-launch-stage h3{min-height:0}.cs-validation-example{gap:22px}.cs-validation-checkpoints{gap:16px}}
+
+
+/* Reconstructed Classic version selection, positioned inside the archived mock */
+.cs-source-crop:has(.cs-version-inset){container-type:inline-size}
+.cs-version-inset{position:absolute;left:2.8%;top:80.1%;width:94%;background:#fff}
+.cs-version-table{width:100%;table-layout:fixed;border-collapse:collapse;font-family:"Amazon Ember",Arial,sans-serif;font-size:1.75cqw;line-height:1.57;color:#16191f;text-align:left}
+.cs-version-table th{font-weight:700;color:#545b64;background:#fafafa;padding:1.05cqw 1.3cqw;border-bottom:1px solid #eaeded;white-space:nowrap}
+.cs-version-table th:not(:last-child){border-right:1px solid #eaeded}
+.cs-version-table th span{vertical-align:middle}
+.cs-version-table td{background:#f1faff;padding:1.05cqw 1.3cqw;border-top:1px solid #0073bb;border-bottom:1px solid #0073bb;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs-version-table td:first-child{border-left:1px solid #0073bb;text-align:center;padding-left:.7cqw;padding-right:.7cqw}
+.cs-version-table td:last-child{border-right:1px solid #0073bb}
+.cs-section .cs-source-crop .cs-version-table img{position:static;display:inline-block;height:auto;max-width:100%;vertical-align:middle}
+.cs-section .cs-source-crop .cs-version-table .cs-version-sort{width:1.9cqw;margin-left:.6cqw}
+.cs-section .cs-source-crop .cs-version-table .cs-version-radio{width:1.75cqw}
+
+
+.cs-section figure.cs-matrix-sample{max-width:900px;margin:36px auto 0}.cs-matrix-sample .cs-source-crop{border-radius:0}
+
+.cs-planning-evidence{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start;margin-top:34px}
+.cs-planning-evidence h3{font-size:21px;margin:0 0 20px}
+.cs-planning-evidence .cs-expand figure,.cs-planning-evidence figure.cs-matrix-sample{margin:0}
+.cs-planning-evidence .cs-map{max-height:none;aspect-ratio:1850/1060;object-fit:cover;object-position:top}
+.cs-planning-evidence figcaption{font-size:14px}
+@media(max-width:760px){.cs-planning-evidence{grid-template-columns:1fr;gap:36px}}
+
+
+.cs-help-progression{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:32px}
+.cs-help-progression article{position:relative;background:#fff;border-top:3px solid #0073bb;padding:26px 24px;border-radius:0 0 8px 8px}
+.cs-help-progression article:not(:last-child):after{content:'→';position:absolute;right:-23px;top:50%;color:#0073bb;font-size:23px}
+.cs-help-progression span{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#0073bb}
+.cs-help-progression h3{font-size:21px;margin:12px 0}
+.cs-help-progression p{font-size:15px;line-height:1.65;margin:0}
+@media(max-width:760px){.cs-help-progression{grid-template-columns:1fr}.cs-help-progression article:not(:last-child):after{content:'↓';right:calc(50% - 7px);top:auto;bottom:-27px}}
+
 </style>
 <script src="./image-slot.js"></script>
 </helmet>
@@ -51,323 +141,64 @@
 
   <!-- hero -->
   <header style="position:relative;color:#fff;">
-    <div style="position:absolute;top:0;left:0;right:0;height:calc(100% - 230px);background:#232F3E;z-index:0;"></div>
+    <div style="position:absolute;top:0;left:0;right:0;bottom:clamp(70px,16vw,230px);background:#232F3E;z-index:0;"></div>
     <div style="position:relative;z-index:1;width:min(1120px,88vw);margin:0 auto;padding:clamp(40px,6vw,64px) 0 0;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
       <div>
-        <div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:14px;">AWS Service Catalog</div>
         <h1 style="font-size:clamp(40px,7vw,76px);font-weight:700;letter-spacing:-0.03em;margin:0;line-height:0.98;">Cloudscape Migration</h1>
-        <p style="font-size:clamp(15px,1.5vw,20px);margin:14px 0 0;opacity:0.85;font-weight:400;letter-spacing:0.01em;">The Design System for Building AWS Products and Experiences</p>
+        <p style="font-size:clamp(15px,1.5vw,20px);margin:14px 0 0;opacity:0.85;font-weight:400;letter-spacing:0.01em;">AWS Service Catalog &middot; Console &amp; Product Launch Redesign</p>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:10px;padding-bottom:6px;">
         <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Enterprise</span>
         <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Design System</span>
         <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Information Architecture</span>
-        <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">AWS</span>
+        <span style="border:1px solid rgba(255,255,255,0.55);color:#fff;border-radius:999px;padding:7px 16px;font-size:13px;letter-spacing:0.01em;">Interaction Design</span>
       </div>
     </div>
     <div style="position:relative;z-index:1;width:min(1400px,95vw);margin-left:auto;margin-right:auto;margin-top:40px;">
-      <image-slot id="cs-hero" fit="cover" style="width:100%;height:clamp(280px,44vw,580px);border-radius:20px;box-shadow:0 12px 32px rgba(0,0,0,0.16);" shape="rounded" radius="20" placeholder="Cloudscape component collage — grid of charts, tables &amp; UI components"></image-slot>
+      <img src="assets/cs-hero-current.png" alt="Service Catalog provisioned-product interface with a help panel and floating Cloudscape components" width="2800" height="1307" style="display:block;width:100%;height:auto;border-radius:20px;box-shadow:0 12px 32px rgba(0,0,0,.16);">
     </div>
   </header>
 
-  <!-- overview + my role -->
-  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,72px);align-items:start;">
-      <div>
-        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Overview</h2>
-        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0 0 36px;">AWS Service Catalog is a governance and distribution platform used by 32% of the Global 2000. Its console had grown organically across years and two deprecated design systems, resulting in an inconsistent, fragmented experience. When the central AWS UX team mandated a migration to the new Cloudscape design system across all 135+ AWS services, I led the effort for Service Catalog: redesigning and migrating 128 console pages while maintaining full feature parity, and simultaneously overhauling the product's most-complained-about workflow.</p>
-        <h3 style="font-size:clamp(20px,2.2vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0 0 16px;">My Role</h3>
-        <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I was the primary UX designer on Service Catalog for the majority of my five years at AWS, often the sole designer supporting an engineering org of 80+ people. I owned the migration end-to-end: conducting the site audit, mapping components, running user research, designing the new experience, presenting to stakeholders, and working directly with nine front end engineers to ship it.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr;gap:28px;align-content:start;">
-        <div>
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">The Client</div>
-          <div style="font-size:15px;color:#444;line-height:1.55;">Amazon Web Services<br>2019&ndash;2021</div>
-        </div>
-        <div>
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">My Role</div>
-          <div style="font-size:15px;color:#444;line-height:1.55;">Primary / Sole UX Designer</div>
-        </div>
-        <div>
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">The Team</div>
-          <div style="font-size:15px;color:#444;line-height:1.7;">1 Technical Product Manager<br>1 UX Researcher<br>1 UX Designer (me)<br>9 Front End Engineers</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="cs-section "><div class="cs-wrap"><h2>The short version</h2><div class="cs-intro"><div><p>AWS asked its service consoles to move to the Cloudscape Design System and Development Framework. For Service Catalog, that meant migrating 128 pages built on two older design systems while preserving every feature and the public APIs customers depended on.</p><p>Customers used the console to learn the service, but the interface offered little guidance. Launch research showed that unclear parameter requirements and validation after submission led to failed launches and repeated data entry. I pushed to expand the migration scope, organized a writing sprint, and partnered with the front-end team to improve parameter guidance, introduce client-side validation, and redesign recovery. In the 90 days after release, console satisfaction rose from 63% to 73%.</p><div class="cs-stats"><span>128 pages migrated</span><span>CSAT 63% → 73%</span><span>Existing public APIs preserved</span></div></div><dl class="cs-meta"><div><dt>Client</dt><dd>Amazon Web Services</dd></div><div><dt>Timeline</dt><dd>2019–2021</dd></div><div><dt>Role</dt><dd>UX Designer · led UX for Service Catalog</dd></div><div><dt>I owned</dt><dd>Migration strategy, information architecture, interaction design, content coordination, and design delivery</dd></div><div><dt>Project team</dt><dd>1 product manager, 1 UX researcher, 9 front-end engineers</dd></div></dl></div></div></section>
+<section class="cs-section cs-overview"><div class="cs-wrap"><h2>What is Service Catalog?</h2><p>Service Catalog helps cloud governance teams give people access to approved infrastructure. For the CloudFormation products in this project, administrators wrote templates, packaged them as products and versions, and governed access through portfolios. End users discovered approved products and launched resources without needing to write the infrastructure code themselves.</p><p>The console had to give administrators depth and control while helping people with less AWS experience get their work done.</p><figure class=""><img src="assets/cs-service-overview-current.png" alt="Administrators curate approved products in portfolios; end users discover, launch, and manage them." loading="lazy" width="2172" height="724"></figure></div></section>
+<section class="cs-section "><div class="cs-wrap"><h2>The design challenge</h2><p>Navigation, tables, actions, and terminology varied across the console. Moving to a new design system meant deciding which patterns could translate directly and which needed more attention.</p><p>The product launch workflow was the clearest problem. Every product went through a six-page wizard, including pages with nothing required. It asked for parameters before the product version, even though the version determined which parameters existed. Errors surfaced after submission and could leave customers starting again from a blank form.</p><p>Those inputs came from templates written by administrators. A product might ask for two values or dozens. The redesign had to handle both without changing what the underlying service accepted.</p><figure class="cs-former-workflow"><img src="assets/cs-former-wizard-current.png" alt="Six-page launch wizard with unnecessary choices, validation after submission, and a failure loop requiring parameter re-entry." loading="lazy" width="1920" height="819"></figure></div></section>
+<section class="cs-section cs-tint"><div class="cs-wrap"><h2>Understanding the service</h2><p>A launch depended on more than the person filling in the form. The administrator defined the product, its inputs, and access. Service Catalog presented those choices, and CloudFormation provisioned the resources. When something failed, the end user could see the error without having the authority or knowledge to fix its source.</p><p>That handoff mattered to the redesign. We needed to explain what people were being asked to do, catch input errors earlier, and help them understand when recovery required an administrator. The blueprint below reconstructs those dependencies from my research and design work.</p><div class="cs-blueprint"><figure class=""><img src="assets/cs-service-blueprint.svg" alt="Reconstructed service blueprint showing administrator actions, end-user actions, the visible console, supporting systems, and the handoff for template errors." loading="lazy" width="1600" height="900"></figure></div><p class="cs-blueprint-note">On smaller screens, scroll the blueprint horizontally to explore the supporting layers.</p></div></section>
+<section class="cs-section "><div class="cs-wrap"><h2>Research that changed the plan</h2><p>I partnered with our UX researcher to plan and run discovery. The launch research included eight administrator interviews, followed by seven prototype interviews. Three findings shaped the work.</p><table class="cs-finding-table"><thead><tr><th scope="col">What we learned</th><th scope="col">Design response</th></tr></thead><tbody><tr><td>Customers used the console to learn Service Catalog.</td><td>Wrote explanations in the interface, help panel, and documentation.</td></tr><tr><td>Customers brought different kinds of expertise.</td><td>Kept expert controls available while explaining unfamiliar concepts.</td></tr><tr><td>Failed launches were the primary pain point in the launch research.</td><td>Expanded launch design to improve parameter guidance, add client-side validation, and support recovery.</td></tr></tbody></table><blockquote class="cs-pullquote">One finding challenged my consumer design instincts: customers preferred dense tables and one comprehensive page. They needed to scan, compare, and act without clicking through a series of screens. I kept that density and used progressive disclosure to make the depth manageable.</blockquote><h3>Making the case for a deeper redesign</h3><p>I took the discovery findings to leadership and made the case to redesign launch during the migration. The front-end team supported the change. Leadership weighed the longer timeline and another round of usability testing. I argued that carrying the biggest customer problem into the new system would leave us with the same work to do later. We agreed to expand the scope.</p><p>To keep 128 pages moving, I built a migration matrix and sorted patterns into direct translations, adaptations, and redesigns. I coordinated reviews with the central Cloudscape team and phased delivery: administrator pages first, then end-user pages, with customer feedback and beta releases informing each phase.</p><div class="cs-planning-evidence"><div class="cs-planning-map"><h3>Mapping the console</h3><button type="button" class="cs-expand" data-expand-trigger="sc-sitemap-lightbox" aria-label="Expand the full Service Catalog site map"><figure class=""><img class="cs-map" src="assets/sc-site-map_2x.png" alt="Service Catalog site map, showing the scope of the migration." loading="lazy" width="4200" height="4969"><figcaption>Open the full site map</figcaption></figure></button></div><div class="cs-planning-matrix"><h3>Tracking the migration</h3><figure class="cs-matrix-sample"><div class="cs-source-crop" style="aspect-ratio:1850/1060"><img src="assets/cs-migration-matrix-sample.png" alt="Recreated migration matrix sample showing end-user pages, navigation paths, before and after screen references, and separate design and development progress." width="2303" height="4746" loading="lazy" style="width:124.4865%;left:0;top:0"></div><figcaption>Recreated sample of the migration matrix. This excerpt illustrates how I organized page references and tracked design and development progress; the original working matrix is no longer available.</figcaption></figure></div></div></div></section>
+<section class="cs-section cs-tint"><div class="cs-wrap"><h2>Guidance built into the experience</h2><p>Customers were learning the service through an interface that offered little explanation. I organized a writing sprint, using our migration matrix to assign sections to the subject matter experts who knew those features best. I worked with them to write brief explanations of each page and content block, guidance for parameter fields, help-panel content, and updated documentation.</p><p>Our strategy was “taste, snack, meal.” The interface gave customers enough to keep moving. The help panel offered more detail. Online documentation provided the full explanation, with a clear path from one level to the next.</p><div class="cs-help-progression" aria-label="Taste, snack, meal guidance progression"><article><span>Taste</span><h3>In the interface</h3><p>Brief explanations of the page, content blocks, and parameter requirements help customers keep moving.</p></article><article><span>Snack</span><h3>In the help panel</h3><p>Contextual help explains unfamiliar concepts without taking customers away from the task.</p></article><article><span>Meal</span><h3>In the documentation</h3><p>Links lead to the complete explanation when customers need more detail.</p></article></div></div></section>
+<section id="console-redesign" class="cs-section cs-console-gallery"><div class="cs-wrap"><h2>One set of rules across the console</h2><p>I defined shared patterns for navigation, hierarchy, tables, actions, and help, then applied them across the console. Tables stayed information-dense because customers needed to scan and compare. Consistency meant they could move between tasks without relearning where things lived.</p></div><div class="cs-carousel" role="region" aria-roledescription="carousel" aria-label="Redesigned Service Catalog pages"><div class="cs-carousel-stage"><figure class="cs-carousel-slide" data-page-label="Service Catalog home" aria-hidden="false" style="--slot:0;--scale:1;--opacity:1;--layer:3"><img src="assets/cs-service-landing-new.jpeg" alt="Redesigned service catalog home page" width="812" height="712" loading="lazy"></figure><figure class="cs-carousel-slide" data-page-label="Product details" aria-hidden="true" style="--slot:1;--scale:0.74;--opacity:1;--layer:1"><img src="assets/cs-product-detail-new.jpeg" alt="Redesigned product details page" width="2876" height="1806" loading="lazy"></figure><figure class="cs-carousel-slide" data-page-label="Administrator portfolios" aria-hidden="true" style="--slot:2;--scale:0.74;--opacity:0;--layer:1" data-distant><img src="assets/cs-portfolio-list-new.jpeg" alt="Redesigned administrator portfolios page" width="2876" height="1646" loading="lazy"></figure><figure class="cs-carousel-slide" data-page-label="Administrator products" aria-hidden="true" style="--slot:3;--scale:0.74;--opacity:0;--layer:1" data-distant><img src="assets/cs-product-list-new.jpeg" alt="Redesigned administrator products page" width="2876" height="1646" loading="lazy"></figure><figure class="cs-carousel-slide" data-page-label="Provisioned products" aria-hidden="true" style="--slot:-2;--scale:0.74;--opacity:0;--layer:1" data-distant><img src="assets/cs-provisioned-product-list-new.jpeg" alt="Redesigned provisioned products page" width="2876" height="1646" loading="lazy"></figure><figure class="cs-carousel-slide" data-page-label="Provisioned product details" aria-hidden="true" style="--slot:-1;--scale:0.74;--opacity:1;--layer:1"><img src="assets/cs-provisioned-product-detail-new.jpeg" alt="Redesigned provisioned product details page" width="2876" height="1806" loading="lazy"></figure></div><div class="cs-carousel-footer"><p class="cs-carousel-caption" data-gallery-caption>Service Catalog home · 1 / 6</p><div class="cs-carousel-controls"><button type="button" data-gallery-prev aria-label="Previous redesigned page"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 4L5 12L13 20M5 12H22" stroke="currentColor" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/></svg></button><button type="button" data-gallery-pause aria-label="Pause slideshow"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2h3v12H4zM9 2h3v12H9z"/></svg> Pause</button><button type="button" data-gallery-next aria-label="Next redesigned page"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 4L5 12L13 20M5 12H22" stroke="currentColor" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter" transform="translate(24 0) scale(-1 1)"/></svg></button></div></div></div></section>
+<section class="cs-section cs-tint" id="product-launch-redesign"><div class="cs-wrap">
+<h2>One launch page that adapts to the product</h2>
+<p>I worked closely with the front-end team to replace the six-page wizard with one adaptive page. Launch options and product version came before parameters, so the page could load the relevant inputs. We kept parameters together and collapsed optional sections, including tags, notifications, and resource changes.</p>
+<p>The design removed choices that did not need to be made. When there was only one launch option or version, customers could move straight to the parameters. The same structure accommodated a simple product or a multi-resource application.</p>
+<div class="cs-launch-tenets" aria-label="Launch design tenets"><span>Prevent incorrect inputs</span><span>Give actionable feedback early</span><span>Preserve work when a launch fails</span></div>
+<div class="cs-launch-progression"><figure class="cs-launch-stage"><div class="cs-stage-number">01</div><h3>Start with the choices that matter</h3><div class="cs-source-crop" style="aspect-ratio:1630/1380"><img src="assets/cs-launch-initial.png" alt="Initial launch design showing the provisioned product name, launch options, and product version." loading="lazy" width="3704" height="2078" style="width:227.2393%;left:-9.2025%;top:-26.4493%"><div class="cs-version-inset"><table class="cs-version-table" aria-label="Reconstructed product version selection"><colgroup><col style="width:5.6%"><col style="width:22%"><col style="width:33%"><col style="width:39.4%"></colgroup><thead><tr><th aria-label="Selection"></th><th scope="col"><span>Versions</span><img class="cs-version-sort" src="assets/classic-table-sort.svg" alt="" width="16" height="16"></th><th scope="col"><span>Created time</span><img class="cs-version-sort" src="assets/classic-table-sort.svg" alt="" width="16" height="16"></th><th scope="col"><span>Type</span><img class="cs-version-sort" src="assets/classic-table-sort.svg" alt="" width="16" height="16"></th></tr></thead><tbody><tr><td><img class="cs-version-radio" src="assets/classic-table-radio-selected.svg" alt="Selected" width="14" height="14"></td><td>v1.0</td><td>Aug 2nd 2018 09:05:15 UTC…</td><td>CLOUD_FORMATION_TEMPLATE</td></tr></tbody></table></div></div><figcaption>Customers select launch options and a product version from a table before loading parameters. The design removed these choices when only one option existed.</figcaption><a class="cs-source-link" href="assets/launch-designs.html?page=initial" target="_blank" rel="noopener">View full design specification ↗</a></figure><figure class="cs-launch-stage"><div class="cs-stage-number">02</div><h3>Load the relevant parameters</h3><div class="cs-source-crop" style="aspect-ratio:1630/1640"><img src="assets/cs-launch-parameters.png" alt="Parameter design showing locked values, predefined choices, editable defaults, and searchable inputs." loading="lazy" width="3704" height="4204" style="width:227.2393%;left:-9.2025%;top:-109.7561%"></div><figcaption>Keep parameters together, using the input type appropriate to each value: fixed, selectable, editable, or searchable.</figcaption><a class="cs-source-link" href="assets/launch-designs.html?page=parameters" target="_blank" rel="noopener">View full design specification ↗</a></figure><figure class="cs-launch-stage"><div class="cs-stage-number">03</div><h3>Keep optional controls within reach</h3><div class="cs-source-crop" style="aspect-ratio:1630/2220"><img src="assets/cs-launch-optional.png" alt="Expanded optional controls for tags, event notifications, and resource changes." loading="lazy" width="3704" height="5898" style="width:227.2393%;left:-9.2025%;top:-157.6577%"></div><figcaption>Tags, notifications, and resource changes remain available on the same page, collapsed and clearly marked as optional.</figcaption><a class="cs-source-link" href="assets/launch-designs.html?page=optional" target="_blank" rel="noopener">View full design specification ↗</a></figure></div>
 
-  <!-- what is service catalog -->
-  <section style="background:#f5f5f5;">
-    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-      <div data-reveal>
-        <div style="max-width:760px;margin-bottom:clamp(32px,4vw,44px);">
-          <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">What Is Service Catalog?</h2>
-          <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">Service Catalog enables IT Administrators to curate and distribute approved AWS products to end users through a personalized portal &mdash; giving admins control over access and compliance.</p>
-        </div>
-        <image-slot id="cs-overview-diagram" fit="contain" src="assets/cs-service-catalog-diagram.png" style="width:100%;height:auto;aspect-ratio:2470/1326;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:8px;" shape="rounded" radius="8" placeholder="Service overview diagram — Administrators &rarr; Service Catalog &rarr; end users"></image-slot>
-      </div>
-    </div>
-  </section>
-
-  <!-- the problem / the task -->
-  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:18px;">
-      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:34px 30px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <span style="width:10px;height:10px;border-radius:50%;background:#FF9900;flex:0 0 auto;"></span>
-          <h3 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0;">The Problem</h3>
-        </div>
-        <p style="font-size:15.5px;line-height:1.72;color:#444;margin:0;">Service Catalog was one of 135+ AWS services, each with their own unique console. There was no unifying design system, and patterns varied widely from service to service &mdash; creating a fragmented, confusing experience for users who moved between them. Service Catalog itself was a hodgepodge of two deprecated design systems, with inconsistent patterns from page to page and an unintuitive interface.</p>
-      </div>
-      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:34px 30px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <span style="width:10px;height:10px;border-radius:50%;background:#FF9900;flex:0 0 auto;"></span>
-          <h3 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0;">The Task</h3>
-        </div>
-        <p style="font-size:15.5px;line-height:1.72;color:#444;margin:0;">To unite all services under one system, the central AWS UX team created Cloudscape &mdash; a design system of working code, design tools, and human interface guidelines built to ensure consistent, predictable experiences at scale. Adoption was mandated across all 135+ services. I was tasked with migrating the entire Service Catalog console to Cloudscape while maintaining full feature parity across 128 pages.</p>
-      </div>
-    </div>
-
-    <!-- additional challenge -->
-    <div data-reveal style="border-left:3px solid #FF9900;background:#fff7ec;border-radius:0 14px 14px 0;padding:30px 32px;margin-bottom:clamp(28px,4vw,40px);">
-      <h3 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0 0 12px;">The Additional Challenge: A Broken Core Workflow</h3>
-      <p style="font-size:15.5px;line-height:1.72;color:#444;margin:0;max-width:900px;">The migration was also an opportunity to address Service Catalog's most persistent customer pain point: the product launch workflow. It spanned five separate pages, required six clicks before a user even entered parameters, and used server-side-only parameter validation that caused frequent failures &mdash; forcing users to re-enter all their data from scratch.</p>
-    </div>
-  </section>
-
-  <!-- customers / personas -->
-  <section style="background:#232F3E;color:#fff;">
-    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 14px;color:#fff;">Customers</h2>
-      <p data-reveal style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:rgba(255,255,255,0.65);margin:0 0 clamp(36px,4vw,52px);max-width:640px;">Research surfaced three distinct Service Catalog personas, each with fundamentally different goals and relationships with the product.</p>
-      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:clamp(36px,4vw,52px);">
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:32px 30px;">
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">Service Catalog Admin</div>
-          <h3 style="font-size:clamp(20px,2.2vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0 0 18px;color:#fff;">Cloud Engineering Manager</h3>
-          <p style="font-size:18px;line-height:1.5;font-weight:500;color:#fff;margin:0 0 18px;">&ldquo;Our goal has always been: I&rsquo;d rather give you permissions to do things yourself, but have checks in place to make sure you are doing it the right way.&rdquo;</p>
-          <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);margin:0;">Admins own the engine. They define what infrastructure their organization can access, maintain governance and compliance, and provide tools their teams can use in a self-service manner. Balancing autonomy with control, at scale, is the job.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:32px 30px;">
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">End User</div>
-          <h3 style="font-size:clamp(20px,2.2vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0 0 18px;color:#fff;">Application Developer</h3>
-          <p style="font-size:18px;line-height:1.5;font-weight:500;color:#fff;margin:0 0 18px;">&ldquo;Writing code has gotten much more complicated now that we need to understand topics related to infrastructure and the cloud.&rdquo;</p>
-          <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);margin:0;">Developers want to build applications, not become infrastructure experts. They rely on Service Catalog to access what they need without getting lost in configuration. When the experience creates friction, it feels like a second job on top of the one they already have.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:32px 30px;">
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#FF9900;margin-bottom:8px;">End User</div>
-          <h3 style="font-size:clamp(20px,2.2vw,24px);font-weight:700;letter-spacing:-0.01em;margin:0 0 18px;color:#fff;">Data Scientist</h3>
-          <p style="font-size:18px;line-height:1.5;font-weight:500;color:#fff;margin:0 0 18px;">&ldquo;I only need to be in the data to do my job; the mechanics of the tools I use and how I access them is not something I need to care about.&rdquo;</p>
-          <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72);margin:0;">Data scientists use Service Catalog purely as a means to an end. Access to tools like SageMaker is what matters. The workflow to get there should be invisible.</p>
-        </div>
-      </div>
-      <image-slot id="cs-jtbd" data-reveal fit="contain" style="width:100%;height:auto;aspect-ratio:1072/500;background:#fff;border:none;border-radius:8px;" shape="rounded" radius="8" placeholder="Jobs-to-be-done diagram — Admin and End User personas across the five-step workflow"></image-slot>
-    </div>
-  </section>
-
-  <!-- approach -->
-  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-    <div data-reveal style="max-width:760px;margin-bottom:clamp(32px,4vw,44px);">
-      <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">Approach</h2>
-      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">With 128 pages to redesign and a hard mandate to maintain feature parity, I developed a structured approach to make the migration manageable.</p>
-    </div>
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-      <div style="display:flex;gap:16px;align-items:flex-start;background:#fafbfc;border:1px solid #ececf0;border-radius:12px;padding:22px 22px;"><span style="font-size:13px;font-weight:700;color:#FF9900;flex:0 0 auto;margin-top:2px;">01</span><p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Took a full inventory of all pages in the existing console</p></div>
-      <div style="display:flex;gap:16px;align-items:flex-start;background:#fafbfc;border:1px solid #ececf0;border-radius:12px;padding:22px 22px;"><span style="font-size:13px;font-weight:700;color:#FF9900;flex:0 0 auto;margin-top:2px;">02</span><p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Created a site map and tracking matrix to monitor progress across all pages</p></div>
-      <div style="display:flex;gap:16px;align-items:flex-start;background:#fafbfc;border:1px solid #ececf0;border-radius:12px;padding:22px 22px;"><span style="font-size:13px;font-weight:700;color:#FF9900;flex:0 0 auto;margin-top:2px;">03</span><p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Mapped existing features and UI elements to their Cloudscape component equivalents</p></div>
-      <div style="display:flex;gap:16px;align-items:flex-start;background:#fafbfc;border:1px solid #ececf0;border-radius:12px;padding:22px 22px;"><span style="font-size:13px;font-weight:700;color:#FF9900;flex:0 0 auto;margin-top:2px;">04</span><p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Identified workflows needing more than a component swap &mdash; where migration was a chance to improve the experience</p></div>
-      <div style="display:flex;gap:16px;align-items:flex-start;background:#fafbfc;border:1px solid #ececf0;border-radius:12px;padding:22px 22px;"><span style="font-size:13px;font-weight:700;color:#FF9900;flex:0 0 auto;margin-top:2px;">05</span><p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Designed a two-part rollout: admin-facing pages first, then end-user-facing pages</p></div>
-      <div style="display:flex;gap:16px;align-items:flex-start;background:#fafbfc;border:1px solid #ececf0;border-radius:12px;padding:22px 22px;"><span style="font-size:13px;font-weight:700;color:#FF9900;flex:0 0 auto;margin-top:2px;">06</span><p style="font-size:15px;line-height:1.6;color:#444;margin:0;">Created initial visual designs, then presented to stakeholders in customer calls and in-person meetings before engineering began</p></div>
-    </div>
-  </section>
-
-  <!-- site audit + component mapping -->
-  <section style="background:#f5f5f5;">
-    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px);">
-      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center;">
-        <div>
-          <h2 style="font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-0.02em;margin:0 0 18px;">Site Audit</h2>
-          <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.75;color:#444;margin:0;">Before any design work began, I conducted a full audit of the existing console &mdash; cataloging every page, identifying the design patterns in use, and flagging inconsistencies. This gave the team a shared understanding of scope and became the foundation for the migration tracking matrix.</p>
-        </div>
-        <image-slot id="cs-audit" src="assets/cs-audit.png" fit="contain" style="width:100%;height:auto;aspect-ratio:1330/760;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:8px;" shape="rounded" radius="8" placeholder="Site map &amp; tracking matrix — full inventory of pages and migration status"></image-slot>
-      </div>
-      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center;">
-        <image-slot id="cs-mapping" src="assets/cs-mapping.png" fit="contain" style="width:100%;height:auto;aspect-ratio:2048/1520;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:8px;order:1;" shape="rounded" radius="8" placeholder="Component mapping — old page elements mapped to new Cloudscape components"></image-slot>
-        <div style="order:2;">
-          <h2 style="font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-0.02em;margin:0 0 18px;">Identifying &amp; Mapping Components</h2>
-          <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.75;color:#444;margin:0;">For each page in the audit, I mapped every existing UI element to its Cloudscape equivalent &mdash; identifying which components translated cleanly, which required adaptation, and which were opportunities to introduce better patterns. This mapping exercise was critical to keeping the migration consistent and efficient across 128 pages.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- user research -->
-  <section style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-    <div data-reveal style="max-width:760px;margin-bottom:clamp(36px,5vw,52px);">
-      <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 24px;">User Research</h2>
-      <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.78;color:#444;margin:0;">I ran two rounds of research for the product launch workflow redesign. The first was formative research to identify the core problem; the second was usability testing to validate the solution before engineering built it.</p>
-    </div>
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-bottom:clamp(36px,5vw,52px);">
-      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:34px 30px;">
-        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:6px;">
-          <div style="font-size:clamp(36px,4.4vw,48px);font-weight:700;letter-spacing:-0.03em;color:#232F3E;line-height:1;flex:0 0 auto;">8</div>
-          <div>
-            <h3 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0;">Formative Research</h3>
-            <div style="font-size:13.5px;color:#888;margin-top:3px;">Customer interviews &middot; Jan&ndash;Feb 2020</div>
-          </div>
-        </div>
-        <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FF9900;margin:24px 0 14px;">Key findings</div>
-        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;">
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Failed product launches were the single biggest complaint &mdash; users spent excessive time re-entering parameter values from scratch every time a launch failed.</span></li>
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Users strongly wanted in-line parameter validation, more logical parameter ordering, and the ability to edit and re-launch without starting over.</span></li>
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Product version should be selected before parameters &mdash; parameters depend on the version, but the old workflow had this reversed.</span></li>
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Hiding optional sections (notifications, tag options) by default was valued by all participants.</span></li>
-        </ul>
-      </div>
-      <div style="background:#fafbfc;border:1px solid #ececf0;border-radius:14px;padding:34px 30px;">
-        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:6px;">
-          <div style="font-size:clamp(36px,4.4vw,48px);font-weight:700;letter-spacing:-0.03em;color:#232F3E;line-height:1;flex:0 0 auto;">7</div>
-          <div>
-            <h3 style="font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-0.01em;margin:0;">Usability Testing</h3>
-            <div style="font-size:13.5px;color:#888;margin-top:3px;">Participants &middot; Feb&ndash;Mar 2020</div>
-          </div>
-        </div>
-        <div style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FF9900;margin:24px 0 14px;">Validated the direction</div>
-        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;">
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Parameter validation and the ability to edit after a failed launch &mdash; without restarting &mdash; was the single most impactful improvement.</span></li>
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Hiding optional sections by default was well received.</span></li>
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Participants preferred a single-screen workflow over segmented multi-page flows &mdash; the consolidated layout felt more manageable, not more overwhelming.</span></li>
-          <li style="display:flex;gap:12px;font-size:15px;line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Admins did not report concerns about their end users' ability to navigate the redesigned workflow.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- design -->
-  <section style="background:#f5f5f5;">
-    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 clamp(36px,5vw,56px);">Design</h2>
-
-      <!-- landing page -->
-      <div data-reveal style="margin-bottom:clamp(36px,5vw,56px);">
-        <div style="max-width:760px;margin-bottom:24px;">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px;">
-            <span style="font-size:13px;font-weight:700;letter-spacing:0.06em;color:#FF9900;">01</span>
-            <h3 style="font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-0.01em;margin:0;">Service Landing Page</h3>
-          </div>
-          <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:#444;margin:0;">The landing page was redesigned to immediately communicate the value of the product and orient new users &mdash; replacing a dense, outdated layout with a clean, Cloudscape-aligned experience.</p>
-        </div>
-        <div>
-          <image-slot id="cs-landing" src="assets/service-landing-page.png" fit="contain" style="width:100%;height:auto;aspect-ratio:3116/1251;--frame-bg:transparent;border:none;" shape="rect" placeholder="Before/after — Service Catalog landing page"></image-slot>
-        </div>
-      </div>
-
-      <!-- list pages -->
-      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:start;margin-bottom:clamp(36px,5vw,56px);">
-        <image-slot id="cs-lists" src="assets/cs-lists.png" fit="contain" style="width:100%;height:auto;aspect-ratio:3116/1040;--frame-bg:transparent;border:none;order:1;" shape="rect" placeholder="Before/after — Portfolio list &amp; Products list pages"></image-slot>
-        <div style="order:2;">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px;">
-            <span style="font-size:13px;font-weight:700;letter-spacing:0.06em;color:#FF9900;">02</span>
-            <h3 style="font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-0.01em;margin:0;">List Pages</h3>
-          </div>
-          <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:#444;margin:0;">Core list pages &mdash; Portfolio list and Products list &mdash; were among the most frequently visited in the console. The redesign brought them in line with Cloudscape patterns: cleaner tables, consistent filtering, and a more scannable information hierarchy.</p>
-        </div>
-      </div>
-
-      <!-- launch workflow -->
-      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:start;margin-bottom:clamp(36px,5vw,56px);">
-        <div>
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px;">
-            <span style="font-size:13px;font-weight:700;letter-spacing:0.06em;color:#FF9900;">03</span>
-            <h3 style="font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-0.01em;margin:0;">Product Launch Workflow</h3>
-          </div>
-          <p style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:#444;margin:0 0 20px;">The new launch workflow collapsed five pages into one &mdash; a single, scannable interface that made required parameters immediately obvious. Key design decisions:</p>
-          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;">
-            <li style="display:flex;gap:12px;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Single-page layout replacing a five-step, multi-page flow</span></li>
-            <li style="display:flex;gap:12px;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Clicks reduced from six to one (excluding parameter entry)</span></li>
-            <li style="display:flex;gap:12px;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:#444;"><span style="color:#FF9900;font-weight:700;flex:0 0 auto;">&mdash;</span><span>Parameter validation moved from server-side only to client + server side &mdash; eliminating the failure loop that forced users to re-enter all their data</span></li>
-          </ul>
-        </div>
-        <image-slot id="cs-workflow" src="assets/cs-workflow.png" fit="contain" style="width:100%;height:auto;aspect-ratio:3116/2286;--frame-bg:transparent;border:none;" shape="rect" placeholder="Before/after — five-page launch flow vs. single page"></image-slot>
-      </div>
-
-      <!-- sharing + terraform -->
-      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
-        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:32px 28px;">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;">
-            <span style="font-size:13px;font-weight:700;letter-spacing:0.06em;color:#FF9900;">04</span>
-            <h3 style="font-size:clamp(18px,2vw,21px);font-weight:700;letter-spacing:-0.01em;margin:0;">Portfolio Sharing Redesign</h3>
-          </div>
-          <p style="font-size:15.5px;line-height:1.7;color:#444;margin:0;">I redesigned the portfolio sharing workflow &mdash; improving the interface and adding two long-requested capabilities: sharing TagOptions and sharing with Principals. This significantly expanded the product's usefulness for enterprise governance workflows.</p>
-        </div>
-        <div style="background:#fff;border:1px solid #ececf0;border-radius:14px;padding:32px 28px;">
-          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;">
-            <span style="font-size:13px;font-weight:700;letter-spacing:0.06em;color:#FF9900;">05</span>
-            <h3 style="font-size:clamp(18px,2vw,21px);font-weight:700;letter-spacing:-0.01em;margin:0;">Terraform Support</h3>
-          </div>
-          <p style="font-size:15.5px;line-height:1.7;color:#444;margin:0 0 18px;">Later in my tenure, I designed UX for two rounds of Terraform integration &mdash; Open Source (v1) and Cloud (v2) &mdash; introducing new product types and creation flows into a console historically built around CloudFormation. This required reimagining core workflows without breaking the existing experience for CloudFormation customers.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:20px;border-top:1px solid #ececf0;padding-top:18px;">
-            <div>
-              <div style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#232F3E;line-height:1;">240</div>
-              <div style="font-size:13.5px;color:#666;line-height:1.45;margin-top:6px;">unique customers adopted Terraform support at launch</div>
-            </div>
-            <div>
-              <div style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#232F3E;line-height:1;">144 <span style="font-size:15px;color:#FF9900;">(60%)</span></div>
-              <div style="font-size:13.5px;color:#666;line-height:1.45;margin-top:6px;">completed the full workflow &mdash; incl. McKinsey, Best Buy, Siemens &amp; Hertz</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- impact -->
-  <section style="background:#232F3E;color:#fff;">
-    <div style="width:min(1120px,88vw);margin:0 auto;padding:clamp(48px,8vw,92px) 0;">
-      <h2 data-reveal style="font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:0 0 14px;color:#fff;">Impact</h2>
-      <p data-reveal style="font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:rgba(255,255,255,0.65);margin:0 0 clamp(40px,5vw,60px);max-width:640px;">A redesign that moved the numbers customers care about &mdash; satisfaction, throughput, and adoption &mdash; across every workflow it touched.</p>
-
-      <!-- console redesign -->
-      <div data-reveal style="margin-bottom:clamp(20px,2.5vw,28px);">
-        <div style="font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#FF9900;margin-bottom:20px;">Console Redesign</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(16px,1.6vw,20px);">
-          <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,30px);">
-            <div style="font-size:clamp(44px,5.4vw,64px);font-weight:700;letter-spacing:-0.03em;color:#fff;line-height:1;">80%</div>
-            <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:14px 0 0;">Positive customer feedback on the redesigned console.</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,30px);">
-            <div style="font-size:clamp(44px,5.4vw,64px);font-weight:700;letter-spacing:-0.03em;color:#fff;line-height:1;">63&rarr;73%</div>
-            <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:14px 0 0;">Console CSAT in the 90 days following launch &mdash; landing Service Catalog in the top 10 for CSAT across all AWS service consoles.</p>
-          </div>
-          <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,30px);">
-            <div style="font-size:clamp(44px,5.4vw,64px);font-weight:700;letter-spacing:-0.03em;color:#fff;line-height:1;">Top 10</div>
-            <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:14px 0 0;">For CSAT across all AWS consoles, with positive feedback from JP Morgan, Shell, and Wiley.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- launch workflow + sharing -->
-      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,1.6vw,20px);">
-        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#FF9900;margin-bottom:18px;">Product Launch Workflow</div>
-          <div style="font-size:clamp(36px,4.4vw,52px);font-weight:700;letter-spacing:-0.03em;color:#fff;line-height:1;">46,167&rarr;51,056</div>
-          <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:14px 0 0;">Average weekly stacks launched through the console in the 8 weeks post-launch &mdash; alongside eliminating the parameter re-entry failure loop through client-side validation.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:clamp(24px,3vw,32px);">
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#FF9900;margin-bottom:18px;">Portfolio Sharing</div>
-          <div style="font-size:clamp(36px,4.4vw,52px);font-weight:700;letter-spacing:-0.03em;color:#fff;line-height:1;">32&rarr;80.7%</div>
-          <p style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:14px 0 0;">Customers sharing portfolios in the year following launch &mdash; now regularly cited as a top reason for choosing Service Catalog.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer -->
+<h3>Helping customers get the inputs right</h3>
+<p>The previous launch flow had no client-side parameter validation. Customers could complete and submit the form before learning that an input was invalid. A failed launch could require deleting the product and manually re-entering its parameters.</p>
+<p>We revised interface labels and descriptions to explain what each parameter required, where to find its value, and which format to use. I worked closely with the front-end team to introduce client-side validation, giving customers feedback before they submitted the launch. Clearer instructions and earlier validation worked together to prevent avoidable failures.</p>
+<div class="cs-validation-example"><figure><div class="cs-source-crop" style="aspect-ratio:1550/880"><img src="assets/cs-launch-validation.png" alt="Parameter specification showing a locked value, a predefined selection, a manual input with inline error feedback, and an editable default." loading="lazy" width="3704" height="4414" style="width:238.9677%;left:-12.2581%;top:-230.6818%"></div><figcaption>Design specification: parameter states and inline feedback. Labels and error text shown here include placeholders.</figcaption></figure><div><h4>Different inputs needed different behavior</h4><p>Administrator-defined values could be locked, supplied as editable defaults, or offered as choices. Manual inputs needed clear guidance and feedback next to the field.</p><p>The validation design paired the field error with a form-level message, helping customers locate the problem before trying to launch again.</p></div></div>
+<h3>Three checkpoints for validation and recovery</h3>
+<div class="cs-validation-checkpoints">
+<article><span>01 · While entering values</span><h4>Inline field validation</h4><p>Flag invalid inputs when customers leave a field, while the value and its context are still in front of them.</p></article>
+<article><span>02 · On submit</span><h4>Form validation</h4><p>Check allowed values and validate the CloudFormation template before provisioning. Return actionable errors for correction.</p></article>
+<article><span>03 · During launch</span><h4>Launch recovery</h4><p>The recovery design offered Relaunch after a failed launch, returning customers to the form with their parameters retained and editable.</p></article>
+</div>
+<p>A failure in an administrator’s CloudFormation template still required the administrator to investigate and correct the source. Preserving parameter values reduced repeated work; it did not remove that dependency.</p>
+</div></section>
+<section class="cs-section "><div class="cs-wrap"><h2>Testing it</h2><p>I created design artifacts and click-through prototypes and partnered with our UX researcher to plan and run usability studies. Seven administrators explored the prototype. They valued inline validation, less repeated data entry, and a single page with optional sections collapsed. End users were not available for this round, so these findings reflected administrators’ perspectives on the people they supported.</p><p>We iterated on parameter grouping during the research. The final three participants responded positively to keeping parameters together, including prefilled values. This gave us a clearer direction while leaving direct end-user validation as a gap.</p></div></section>
+<section class="cs-section cs-impact"><div class="cs-wrap"><h2>What changed</h2><div class="cs-metrics"><div class="cs-metric"><strong>63% → 73%</strong><p>Console CSAT within 90 days of release, placing Service Catalog in the top 10 across AWS consoles.</p></div><div class="cs-metric"><strong>80%</strong><p>Positive customer feedback on the redesigned console.</p></div><div class="cs-metric"><strong>46,167 → 51,056</strong><p>Average weekly stacks launched through the console in the eight weeks after release, an increase of approximately 11%.</p></div></div><div style="margin-top:32px"><p>Clearer parameter instructions and client-side validation helped prevent avoidable launch failures before submission. Recovery improvements reduced repeated work in the launch interface. Failures originating in a template still required help from the administrator who owned it.</p></div></div></section>  <!-- footer -->
   <footer style="background:#0d0d0d;color:#fff;padding:clamp(40px,6vw,64px) 0;">
     <div style="width:min(1120px,88vw);margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
       <a href="index.html#work" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span>&larr;</span><span>Back to Work</span></a>
       <a href="aws-getting-started-library.html" style="display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;opacity:0.9;" style-hover="opacity:1;gap:14px;"><span style="color:rgba(255,255,255,0.55);">Next</span><span style="font-weight:500;">AWS Getting Started Library</span><span>&rarr;</span></a>
     </div>
   </footer>
+
+  <!-- sitemap lightbox -->
+  <div id="sc-sitemap-lightbox" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(13,13,13,0.9);align-items:center;justify-content:center;padding:clamp(20px,4vw,48px);cursor:zoom-out;">
+    <img src="assets/sc-site-map_2x.png" alt="Full site map — end-user and admin page hierarchy" style="max-width:100%;max-height:100%;width:auto;height:auto;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+    <button type="button" aria-label="Close" data-lightbox-close style="position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.12);border:none;color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease;" style-hover="background:rgba(255,255,255,0.22);">&times;</button>
+  </div>
 
 </div>
 </x-dc>
@@ -382,9 +213,11 @@ class Component extends DCLogic {
   componentWillUnmount() {
     if (this._io) this._io.disconnect();
     if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._onLightboxKey) document.removeEventListener('keydown', this._onLightboxKey);
   }
 
   componentDidMount() {
+    window.initCloudscapeGallery?.();
     const useReveal = this.props.scrollReveal !== false;
     const useProgress = this.props.showProgress !== false;
 
@@ -423,8 +256,73 @@ class Component extends DCLogic {
       window.addEventListener('scroll', this._onScroll, { passive: true });
       this._onScroll();
     }
+
+    const lightbox = document.getElementById('sc-sitemap-lightbox');
+    const trigger = document.querySelector('[data-expand-trigger="sc-sitemap-lightbox"]');
+    if (lightbox && trigger) {
+      const openLightbox = () => {
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      };
+      const closeLightbox = () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      };
+      trigger.addEventListener('click', openLightbox);
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); }
+      });
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.closest('[data-lightbox-close]')) closeLightbox();
+      });
+      this._onLightboxKey = (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      };
+      document.addEventListener('keydown', this._onLightboxKey);
+    }
   }
 }
 </script>
+
+<script>
+window.initCloudscapeGallery = () => {
+ const root=document.querySelector('.cs-carousel');
+ if(!root)return;
+ const slides=[...root.querySelectorAll('.cs-carousel-slide')];
+ const caption=root.querySelector('[data-gallery-caption]');
+ const pause=root.querySelector('[data-gallery-pause]');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ let index=0, paused=reduced.matches, visible=false, timer;
+ function draw(){
+  slides.forEach((slide,i)=>{
+   let slot=(i-index+slides.length)%slides.length;
+   if(slot>slides.length/2)slot-=slides.length;
+   slide.style.setProperty('--slot',slot);
+   slide.style.setProperty('--scale',slot===0?1:.74);
+   slide.style.setProperty('--opacity',Math.abs(slot)<=1?1:0);
+   slide.style.setProperty('--layer',slot===0?3:1);
+   slide.toggleAttribute('data-distant',Math.abs(slot)>2);
+   slide.setAttribute('aria-hidden',String(slot!==0));
+  });
+  caption.textContent=slides[index].dataset.pageLabel+' · '+(index+1)+' / '+slides.length;
+ }
+ function schedule(){
+  clearInterval(timer);
+  if(!paused&&visible&&!document.hidden&&!reduced.matches)
+   timer=setInterval(()=>{index=(index+1)%slides.length;draw()},4500);
+ }
+ function step(direction){index=(index+direction+slides.length)%slides.length;draw();schedule()}
+ function syncPause(){pause.innerHTML=paused?'<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg> Play':'<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2h3v12H4zM9 2h3v12H9z"/></svg> Pause';pause.setAttribute('aria-label',paused?'Play slideshow':'Pause slideshow')}
+ root.querySelector('[data-gallery-prev]').addEventListener('click',()=>step(-1));
+ root.querySelector('[data-gallery-next]').addEventListener('click',()=>step(1));
+ pause.addEventListener('click',()=>{paused=!paused;syncPause();schedule()});
+ root.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();step(e.key==='ArrowRight'?1:-1)}});
+ document.addEventListener('visibilitychange',schedule);
+ reduced.addEventListener('change',()=>{paused=reduced.matches;syncPause();schedule()});
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule()},{threshold:.2}).observe(root);
+ draw();syncPause();
+};
+</script>
+
 </body>
 </html>

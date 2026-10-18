@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Launch design specifications | Jasmine Fears</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e9edf1;color:#16191f;font-family:"Helvetica Neue",Arial,sans-serif}
+.viewer-nav{position:sticky;top:0;z-index:10;background:#0d0d0d;color:white;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 24px;min-height:70px}
+.viewer-nav a{color:white;text-decoration:none;font-size:14px;white-space:nowrap}.viewer-title{font-size:15px;margin:0;font-weight:500;text-align:center}.viewer-title span{color:#b7c4d2;margin-left:10px;font-weight:400}
+.viewer-controls{display:flex;gap:10px}.viewer-controls button{border:2px solid #0073bb;border-radius:20px;background:white;color:#0073bb;display:flex;align-items:center;justify-content:center;gap:8px;padding:7px 14px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}.viewer-controls button:hover{background:#f1faff;color:#033160}.viewer-controls button:focus-visible,.viewer-nav a:focus-visible{outline:3px solid #00a1c9;outline-offset:4px}
+.viewer-controls svg{width:18px;height:18px}main{max-width:1800px;margin:0 auto;background:white}.viewer-artwork{position:relative;container-type:inline-size}.viewer-artwork>img{display:block;width:100%;height:auto}.viewer-caption{font-size:13px;color:#545b64;padding:14px 24px;margin:0;border-top:1px solid #eaeded}
+.cs-version-inset{position:absolute;left:5.282%;top:70.759%;width:41.366%;background:#fff}
+.cs-version-table{width:100%;table-layout:fixed;border-collapse:collapse;font-family:"Amazon Ember",Arial,sans-serif;font-size:.7701cqw;line-height:1.57;color:#16191f;text-align:left}
+.cs-version-table th{font-weight:700;color:#545b64;background:#fafafa;padding:.4621cqw .5721cqw;border-bottom:1px solid #eaeded;white-space:nowrap}
+.cs-version-table th:not(:last-child){border-right:1px solid #eaeded}.cs-version-table th span{vertical-align:middle}
+.cs-version-table td{background:#f1faff;padding:.4621cqw .5721cqw;border-top:1px solid #0073bb;border-bottom:1px solid #0073bb;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs-version-table td:first-child{border-left:1px solid #0073bb;text-align:center;padding-left:.308cqw;padding-right:.308cqw}.cs-version-table td:last-child{border-right:1px solid #0073bb}
+.cs-version-table img{display:inline-block;height:auto;vertical-align:middle}.cs-version-table .cs-version-sort{width:.8361cqw;margin-left:.264cqw}.cs-version-table .cs-version-radio{width:.7701cqw}
+[hidden]{display:none!important}
+@media(max-width:700px){.viewer-nav{flex-wrap:wrap;padding:12px 16px;gap:12px}.viewer-title{order:3;flex-basis:100%;font-size:14px;text-align:left}.viewer-controls button{padding:6px 10px}.viewer-controls button span{display:none}.viewer-caption{padding:12px 16px}}
+</style></head><body>
+<nav class="viewer-nav" aria-label="Launch design navigation"><a href="../cloudscape-migration.html#product-launch-redesign">← Back to case study</a><h1 class="viewer-title"><span id="design-title"></span><span id="design-count"></span></h1><div class="viewer-controls"><button id="previous" aria-label="Previous launch design"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 4L5 12L13 20M5 12H22" stroke="currentColor" stroke-width="3"/></svg><span>Previous</span></button><button id="next" aria-label="Next launch design"><span>Next</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 4L19 12L11 20M19 12H2" stroke="currentColor" stroke-width="3"/></svg></button></div></nav>
+<main><div class="viewer-artwork"><img id="design-image" src="cs-launch-initial.png" alt="Initial product launch design specification"><div class="cs-version-inset"><table class="cs-version-table" aria-label="Reconstructed product version selection"><colgroup><col style="width:5.6%"><col style="width:22%"><col style="width:33%"><col style="width:39.4%"></colgroup><thead><tr><th aria-label="Selection"></th><th scope="col"><span>Versions</span><img class="cs-version-sort" src="classic-table-sort.svg" alt="" width="16" height="16"></th><th scope="col"><span>Created time</span><img class="cs-version-sort" src="classic-table-sort.svg" alt="" width="16" height="16"></th><th scope="col"><span>Type</span><img class="cs-version-sort" src="classic-table-sort.svg" alt="" width="16" height="16"></th></tr></thead><tbody><tr><td><img class="cs-version-radio" src="classic-table-radio-selected.svg" alt="Selected" width="14" height="14"></td><td>v1.0</td><td>Aug 2nd 2018 09:05:15 UTC…</td><td>CLOUD_FORMATION_TEMPLATE</td></tr></tbody></table></div></div><p class="viewer-caption">Original launch design specifications, including research notes and behavior annotations. Use Previous / Next or the left and right arrow keys to move between designs.</p></main>
+<script>
+(()=>{
+ const designs=[
+ {id:'initial',src:'cs-launch-initial.png',title:'Initial launch page'},
+ {id:'parameters',src:'cs-launch-parameters.png',title:'Parameters loaded'},
+ {id:'optional',src:'cs-launch-optional.png',title:'Optional controls expanded'}];
+ let current=0;
+ const image=document.getElementById('design-image'), title=document.getElementById('design-title'),count=document.getElementById('design-count'),table=document.querySelector('.cs-version-inset');
+ function render(resetScroll=false){
+  const item=designs[current];image.src=item.src;image.alt=item.title+' — full launch design specification';
+  title.textContent=item.title;count.textContent=(current+1)+' / '+designs.length;
+  table.hidden=current!==0;document.title=item.title+' | Launch designs | Jasmine Fears';
+  if(resetScroll)window.scrollTo(0,0);
+ }
+ function navigate(direction){current=(current+direction+designs.length)%designs.length;history.pushState({},'', '?page='+designs[current].id);render(true)}
+ function readUrl(){const id=new URLSearchParams(location.search).get('page');current=Math.max(0,designs.findIndex(d=>d.id===id));render()}
+ document.getElementById('previous').addEventListener('click',()=>navigate(-1));
+ document.getElementById('next').addEventListener('click',()=>navigate(1));
+ document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();navigate(e.key==='ArrowRight'?1:-1)}});
+ window.addEventListener('popstate',readUrl);readUrl();
+})();
+</script></body></html>

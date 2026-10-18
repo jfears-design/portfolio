@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1060" viewBox="0 0 1900 1060">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#60778b"/></marker></defs>
+<rect width="1900" height="1060" fill="#fff"/>
+<text x="48" y="54" font-family="Arial, sans-serif" font-size="34" fill="#23354a" font-weight="700">How a Service Catalog launch works</text>
+<text x="48" y="90" font-family="Arial, sans-serif" font-size="20" fill="#526779" font-weight="400">Service blueprint, reconstructed from my research and design work</text>
+<text x="48" y="121" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">CloudFormation products · Redesign era · Condensed view</text>
+<rect x="235" y="170" width="260" height="60" rx="5" fill="#23354a"/>
+<text x="249" y="207" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Prepare &amp; govern</text>
+<path d="M498 199h5" stroke="#60778b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="503" y="170" width="260" height="60" rx="5" fill="#23354a"/>
+<text x="517" y="207" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Discover</text>
+<path d="M766 199h5" stroke="#60778b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="771" y="170" width="260" height="60" rx="5" fill="#23354a"/>
+<text x="785" y="207" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Configure &amp; launch</text>
+<path d="M1034 199h5" stroke="#60778b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1039" y="170" width="260" height="60" rx="5" fill="#23354a"/>
+<text x="1053" y="207" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Provision</text>
+<path d="M1302 199h5" stroke="#60778b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1307" y="170" width="260" height="60" rx="5" fill="#23354a"/>
+<text x="1321" y="207" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Recover or use</text>
+<path d="M1570 199h5" stroke="#60778b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1575" y="170" width="260" height="60" rx="5" fill="#23354a"/>
+<text x="1589" y="207" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Manage &amp; close</text>
+<text x="48" y="268" font-family="Arial, sans-serif" font-size="17" fill="#23354a" font-weight="700">ADMINISTRATORS</text>
+<text x="48" y="298" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">Own templates</text>
+<text x="48" y="325" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">and governance</text>
+<rect x="235" y="240" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="249" y="268" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Write templates</text>
+<text x="249" y="295" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Create products</text>
+<text x="249" y="322" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">and versions</text>
+<text x="249" y="349" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Set rules and access</text>
+<rect x="503" y="240" width="260" height="128" rx="5" fill="#f8fafc"/>
+<rect x="771" y="240" width="260" height="128" rx="5" fill="#f8fafc"/>
+<rect x="1039" y="240" width="260" height="128" rx="5" fill="#f8fafc"/>
+<rect x="1307" y="240" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="1321" y="268" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">For template issues:</text>
+<text x="1321" y="295" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">investigate, fix,</text>
+<text x="1321" y="322" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">publish a new version</text>
+<rect x="1575" y="240" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="1589" y="268" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Publish new versions</text>
+<text x="1589" y="295" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Help with cleanup</text>
+<text x="48" y="405" font-family="Arial, sans-serif" font-size="17" fill="#23354a" font-weight="700">END USERS</text>
+<text x="48" y="435" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">Launch and use</text>
+<text x="48" y="462" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">approved products</text>
+<rect x="235" y="377" width="260" height="128" rx="5" fill="#f8fafc"/>
+<rect x="503" y="377" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="517" y="405" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Browse approved</text>
+<text x="517" y="432" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">products</text>
+<rect x="771" y="377" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="785" y="405" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Select version</text>
+<text x="785" y="432" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Enter parameters</text>
+<text x="785" y="459" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Submit launch</text>
+<rect x="1039" y="377" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="1053" y="405" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Wait for resources</text>
+<rect x="1307" y="377" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="1321" y="405" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Read error and retry</text>
+<text x="1321" y="432" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">or ask administrator</text>
+<text x="1321" y="459" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">On success: use outputs</text>
+<rect x="1575" y="377" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="1589" y="405" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Update product</text>
+<text x="1589" y="432" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">or terminate it</text>
+<text x="48" y="542" font-family="Arial, sans-serif" font-size="17" fill="#23354a" font-weight="700">VISIBLE CONSOLE</text>
+<text x="48" y="572" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">What people see</text>
+<text x="48" y="599" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">and act on</text>
+<rect x="235" y="514" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="249" y="542" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Admin console</text>
+<text x="249" y="569" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Products and portfolios</text>
+<rect x="503" y="514" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="517" y="542" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Product list</text>
+<text x="517" y="569" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Product details</text>
+<rect x="771" y="514" width="260" height="128" rx="5" fill="#fff4e5"/>
+<text x="785" y="542" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Launch form</text>
+<text x="785" y="569" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Field guidance</text>
+<text x="785" y="596" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Help panel</text>
+<rect x="771" y="514" width="4" height="128" fill="#ec8a00"/>
+<rect x="1039" y="514" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="1053" y="542" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Status and events</text>
+<rect x="1307" y="514" width="260" height="128" rx="5" fill="#fff4e5"/>
+<text x="1321" y="542" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Error details</text>
+<text x="1321" y="569" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Next steps</text>
+<text x="1321" y="596" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Outputs on success</text>
+<rect x="1307" y="514" width="4" height="128" fill="#ec8a00"/>
+<rect x="1575" y="514" width="260" height="128" rx="5" fill="#f8fafc"/>
+<text x="1589" y="542" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Provisioned products</text>
+<text x="1589" y="569" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Update / terminate</text>
+<text x="48" y="679" font-family="Arial, sans-serif" font-size="17" fill="#23354a" font-weight="700">BEHIND THE SCENES</text>
+<text x="48" y="709" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">Systems and</text>
+<text x="48" y="736" font-family="Arial, sans-serif" font-size="17" fill="#60778b" font-weight="400">supporting work</text>
+<rect x="235" y="651" width="260" height="128" rx="5" fill="#f3f7fa"/>
+<text x="249" y="679" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">CloudFormation template</text>
+<text x="249" y="706" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">IAM roles and access</text>
+<text x="249" y="733" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Product constraints</text>
+<rect x="503" y="651" width="260" height="128" rx="5" fill="#f3f7fa"/>
+<text x="517" y="679" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Portfolio access</text>
+<text x="517" y="706" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">determines visibility</text>
+<rect x="771" y="651" width="260" height="128" rx="5" fill="#f3f7fa"/>
+<text x="785" y="679" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Validate input</text>
+<text x="785" y="706" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Check constraints</text>
+<text x="785" y="733" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Use launch role</text>
+<rect x="1039" y="651" width="260" height="128" rx="5" fill="#f3f7fa"/>
+<text x="1053" y="679" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">CloudFormation</text>
+<text x="1053" y="706" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">creates the stack</text>
+<text x="1053" y="733" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">AWS resources</text>
+<rect x="1307" y="651" width="260" height="128" rx="5" fill="#f3f7fa"/>
+<text x="1321" y="679" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Failure investigation</text>
+<text x="1321" y="706" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Template correction</text>
+<text x="1321" y="733" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Support handoff</text>
+<rect x="1575" y="651" width="260" height="128" rx="5" fill="#f3f7fa"/>
+<text x="1589" y="679" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">CloudFormation update</text>
+<text x="1589" y="706" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">or stack deletion</text>
+<path d="M235 646H1835" stroke="#9aaaba" stroke-dasharray="6 5"/>
+<text x="48" y="651" font-family="Arial, sans-serif" font-size="13" fill="#60778b" font-weight="400">LINE OF VISIBILITY</text>
+<rect x="235" y="818" width="1600" height="87" rx="6" fill="#fff1ef"/>
+<text x="255" y="849" font-family="Arial, sans-serif" font-size="23" fill="#a43129" font-weight="700">The person seeing the error may not be the person who can fix it.</text>
+<text x="255" y="881" font-family="Arial, sans-serif" font-size="19" fill="#8d3b34" font-weight="400">Template failure → end user asks administrator → administrator fixes the template → end user retries.</text>
+<rect x="235" y="922" width="1600" height="73" rx="6" fill="#fff4e5"/>
+<text x="255" y="951" font-family="Arial, sans-serif" font-size="19" fill="#925400" font-weight="700">Redesign focus</text>
+<text x="430" y="951" font-family="Arial, sans-serif" font-size="18" fill="#23354a" font-weight="400">Clearer guidance · One adaptive launch page · Earlier validation · Recovery in the launch interface</text>
+<text x="255" y="978" font-family="Arial, sans-serif" font-size="16" fill="#60778b" font-weight="400">Service dependencies are context. Highlighted interface work does not imply every backend failure was removed.</text>
+<text x="48" y="1032" font-family="Arial, sans-serif" font-size="16" fill="#60778b" font-weight="400">Research basis: Product Launch Summary; launch prototypes and design-review artifacts. Broader lifecycle reconstructed from project context.</text>
+</svg>

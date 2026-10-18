@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Checkbox / Input / Default">
+<path id="Background" d="M7 0C3.1 0 0 3.1 0 7C0 10.9 3.1 14 7 14C10.9 14 14 10.9 14 7C14 3.1 10.9 0 7 0V0Z" fill="#0073BB"/>
+<circle id="Icon" cx="7" cy="7" r="3" fill="white"/>
+</g>
+</svg>
